@@ -3,6 +3,7 @@ import { styled } from 'solid-styled-components';
 const PaginationWrapper = styled('div')`
   width: 99%;
   display: flex;
+  padding: 10px 0;
   justify-content: space-between;
 
   .pagination--items,

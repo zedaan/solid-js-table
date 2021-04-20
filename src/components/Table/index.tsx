@@ -98,8 +98,8 @@ const App: any = () => {
   const pagination: any = {
     pageNo: 1,
     pageSize: 10,
-    total: data.length,
-    totalPages: Math.ceil(data.length / 10),
+    total: generateData().length,
+    totalPages: Math.ceil(generateData().length / 10),
   }
 
   return (
