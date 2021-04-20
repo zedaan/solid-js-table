@@ -23,7 +23,6 @@ const App: any = () => {
     {
       header: "Group",
       accessor: "name",
-      fixed: 'left',
       sort: true,
     },
     {
@@ -47,7 +46,6 @@ const App: any = () => {
       header: "Feed",
       accessor: "feed",
       sort: true,
-      fixed: 'right',
     },
     {
       header: "",
@@ -96,7 +94,7 @@ const App: any = () => {
     pageNo: 1,
     pageSize: 10,
     total: data.length,
-    totalPages: Math.ceil(data.length / 5),
+    totalPages: Math.ceil(data.length / 10),
   }
 
   return (

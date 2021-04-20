@@ -13,6 +13,7 @@ const Wrapper: any = styled('div')`
       box-shadow: 0px 2px 10px 2px rgb(0 0 0 / 25%);
       z-index: 9;
       background: ${({ theme }) => theme.colors.primary};
+      border-radius: 3px;
     }
   }
 `;

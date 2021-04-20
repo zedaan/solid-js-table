@@ -6,7 +6,7 @@ const Scrollbar: any = styled('div')`
   padding-bottom: 5px;
   border-bottom: 1px solid #2F2B2B;
   width: 100%;
-  height: ${({ fixed }: any) => fixed ? '400px' : 'auto'};
+  max-height: ${({ fixed }: any) => fixed ? '400px' : 'auto'};
 
   &:hover {
     &::-webkit-scrollbar {

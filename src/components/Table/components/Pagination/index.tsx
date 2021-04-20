@@ -1,20 +1,21 @@
-import { Component, For } from 'solid-js';
+import { Component, For, createComputed, createMemo } from 'solid-js';
 import Dropdown, { DropdownMenu } from '../../../Dropdown';
 import PaginationWrapper from './styles';
 
 const Pagination: Component<any> = (props) => {
-  const onNext = () => {
-    if (props?.pagination?.pageNo < props?.pagination?.totalPages) {
+  const totalPages = createMemo(() => props?.pagination?.totalPages || 1),
+  pageNo = createMemo(() => props?.pagination?.pageNo || 1),
+  onNext = () => {
+    if (pageNo() < totalPages()) {
       props.onPageChange(props.pagination.pageNo + 1);
     }
   },
   onPrev = () => {
-    if (props?.pagination?.pageNo > 1) {
-      props.onPageChange(props.pagination.pageNo - 1);
+    if (pageNo() > 1) {
+      props.onPageChange(pageNo() - 1);
     }
   },
-  PAGINATION_LIMIT = [5, 10, 15, 20, 50],
-  
+  PAGINATION_LIMIT = [5, 10, 15, 20, 50],  
   renderDropdown = () => (
     <Dropdown
       renderBtn={
@@ -35,9 +36,7 @@ const Pagination: Component<any> = (props) => {
         {(limit) => (
           <DropdownMenu
             onClick={() => props.changeLimit(limit)}
-          >
-            {limit}
-          </DropdownMenu>
+          >{limit}</DropdownMenu>
         )}
       </For>
     </Dropdown>
@@ -56,25 +55,29 @@ const Pagination: Component<any> = (props) => {
       </div>
       <div className="pagination--items">
         <div className="results">
-          <i className="gg-chevron gg-chevron-double-left" />
+          <i
+            className="gg-chevron gg-chevron-double-left"
+            onClick={() => props.onPageChange(1)}
+          />
           <i
             className={`gg-chevron gg-chevron-left ${
-              props?.pagination?.pageNo === 1 ? 'disabled': ''
+              pageNo() === 1 ? 'disabled': ''
             }`}
             onClick={() => onPrev()}
           />
           <span className="page--number">
-            {props?.pagination?.pageNo || 1}
-            /{props?.pagination?.totalPages || 1}
+            {pageNo()}/{totalPages()}
           </span>
           <i
             className={`gg-chevron gg-chevron-right ${
-              props?.pagination?.totalPages === props.pagination.pageNo
-              ? 'disabled': ''
+              totalPages() === pageNo() ? 'disabled': ''
             }`}
             onClick={() => onNext()}
           />
-          <i className="gg-chevron gg-chevron-double-right" />
+          <i
+            className="gg-chevron gg-chevron-double-right"
+            onClick={() => props.onPageChange(totalPages() || 1)}
+          />
         </div>
       </div>
     </PaginationWrapper>
@@ -82,4 +85,3 @@ const Pagination: Component<any> = (props) => {
 }
 
 export default Pagination;
-

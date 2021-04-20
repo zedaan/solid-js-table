@@ -70,6 +70,8 @@ const Wrapper = styled("div")`
         position: sticky;
         top: 0;
         background: ${({ theme }) => theme.colors.primary};
+        box-shadow: 0 4px 2px -2px rgb(0 0 0 / 10%);
+        z-index: 1;
       }
     }
   }
