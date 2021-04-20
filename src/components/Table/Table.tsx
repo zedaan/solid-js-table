@@ -72,6 +72,7 @@ const Table: Component<ITableProps> = (props: ITableProps) => {
     });
 
   createComputed(() => {
+    setPagination(props?.pagination || pagination);
     const pageNo = pagination?.pageNo || 1;
     const pageSize = pagination?.pageSize || 10;
     setRows(props.data.slice(((pageNo * pageSize) - pageSize), pageSize * pageNo));

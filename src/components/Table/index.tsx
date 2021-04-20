@@ -22,7 +22,13 @@ const App: any = () => {
   [loading, setLoading] = createSignal(false),
   [fixedHeaders, setFixedheaders] = createSignal(true),
   [fixedColum, setFixedColum] = createSignal(['left', 'right']),
-  [paginations, setPaginations] = createSignal(true),
+  [ShowPagination, setShowPagination] = createSignal(true),
+  [pagination, setPagiantion] = createSignal({
+    pageNo: 1,
+    pageSize: 10,
+    total: generateData().length,
+    totalPages: Math.ceil(generateData().length / 10),
+  }),
   headers = [
     {
       header: "checkbox",
@@ -95,30 +101,31 @@ const App: any = () => {
     }
   ];
 
-  const pagination: any = {
-    pageNo: 1,
-    pageSize: 10,
-    total: generateData().length,
-    totalPages: Math.ceil(generateData().length / 10),
-  }
-
   return (
     <div>
       <div style={{ margin: '20px' }}>
         <Button onClick={() => setLoading(!loading())}>Toggle Loading</Button>
         <Button onClick={() => setFixedheaders(!fixedHeaders())}>Toggle Fixed Headers</Button>
-        <Button onClick={() => setPaginations(!paginations())}>Toggle Paginations</Button>
-        <Button onClick={() => setData(data().length ? [] : generateData())}>Toggle Empty State</Button>
+        <Button onClick={() => setShowPagination(!ShowPagination())}>Toggle ShowPagination</Button>
+        <Button onClick={() => {
+          setData(data().length ? [] : generateData())
+          setPagiantion({
+            pageNo: 1,
+            pageSize: 10,
+            total: data().length,
+            totalPages: Math.ceil(data().length / 10),
+          })
+        }}>Toggle Empty State</Button>
       </div>
       <Table
         headers={headers}
         data={data()}
         className="table"
         wrapperClass="wrapper--class"
-        pagination={pagination}
+        pagination={pagination()}
         fixedHeaders={fixedHeaders()}
         loading={loading()}
-        hidePagination={paginations()}
+        hidePagination={ShowPagination()}
       />
     </div>
   );
