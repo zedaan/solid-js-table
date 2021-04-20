@@ -3,7 +3,7 @@ import { styled } from 'solid-styled-components';
 const Th: any = styled('th')`
   &.fixed__header {
     position: sticky;
-    z-index: 999;
+    z-index: 9;
     background: ${({ theme }) => theme.colors.primary};
     -webkit-backface-visibility: hidden;
 

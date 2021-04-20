@@ -32,4 +32,6 @@ export interface ITableProps {
   defaultSortDirection?: [string, ISortDirection];
   pagination?: IPagination;
   fixedHeaders?: boolean;
+  loading?: boolean;
+  hidePagination?: boolean;
 }

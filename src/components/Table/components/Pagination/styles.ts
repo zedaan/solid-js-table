@@ -45,7 +45,7 @@ const PaginationWrapper = styled('div')`
     display: inline-block;
   }
 
-  .gg-chevron {
+  .icon {
     &:hover {
       &:before,
       &:after {
@@ -58,7 +58,7 @@ const PaginationWrapper = styled('div')`
     }
   }
 
-  .gg-chevron-up {
+  .icon-up {
     box-sizing: border-box;
     position: relative;
     display: inline-block;
@@ -83,7 +83,7 @@ const PaginationWrapper = styled('div')`
     }
   }
 
-  .gg-chevron-double-right {
+  .icon-double-right {
     box-sizing: border-box;
     position: relative;
     display: inline-block;
@@ -113,7 +113,7 @@ const PaginationWrapper = styled('div')`
     }
   }
 
-  .gg-chevron-double-left {
+  .icon-double-left {
     box-sizing: border-box;
     position: relative;
     display: inline-block;
@@ -144,7 +144,7 @@ const PaginationWrapper = styled('div')`
     }
   }
 
-  .gg-chevron-right {
+  .icon-right {
     box-sizing: border-box;
     position: relative;
     display: inline-block;
@@ -170,7 +170,7 @@ const PaginationWrapper = styled('div')`
     }
   }
 
-  .gg-chevron-left {
+  .icon-left {
     box-sizing: border-box;
     position: relative;
     display: inline-block;
@@ -196,7 +196,7 @@ const PaginationWrapper = styled('div')`
     }
   }
 
-  .gg-chevron-down {
+  .icon-down {
     position: relative;
     display: inline-block;
     transform: translateY(-4px);

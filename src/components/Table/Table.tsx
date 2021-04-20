@@ -1,7 +1,17 @@
-import { Component, createSignal, createSelector, createComputed, For, createEffect, onMount, createState, createRenderEffect, createMemo } from "solid-js";
+import {
+  Component,
+  createSignal,
+  createSelector,
+  createComputed,
+  For,
+  createState,
+  Show,
+} from "solid-js";
 import Scrollbar from '../Scrollbar';
 import { HeaderCell, Row, Pagination } from './components';
+import EmptyState from './components/EmptyState';
 import { defaultSorter, onSortHandler } from './components/helpers';
+import LoadingState from './components/LoadingState';
 import { ITableProps } from './model';
 import Wrapper from "./styles";
 
@@ -73,6 +83,9 @@ const Table: Component<ITableProps> = (props: ITableProps) => {
 
   return (
     <Wrapper className={props.wrapperClass}>
+      <Show when={props.loading}>
+        <LoadingState />
+      </Show>
       <Scrollbar fixed={props.fixedHeaders}>
         <table className={props.className}>
           <thead>
@@ -98,32 +111,44 @@ const Table: Component<ITableProps> = (props: ITableProps) => {
             </tr>
           </thead>
           <tbody>
-            <For each={getRows()}>
-              {(row, index) => (
-                <Row
-                  row={row}
-                  headers={props.headers}
-                  isSelected={isSelected(index())}
-                  toggleRow={toggleRow(index())}
-                />
-              )}
-            </For>
+            <Show 
+              when={getRows().length}
+              fallback={
+                !props.loading && (
+                  <EmptyState colSpan={props.headers.length}>
+                    No data to display!
+                  </EmptyState>
+                )
+              }>
+              <For each={getRows()}>
+                {(row, index) => (
+                  <Row
+                    row={row}
+                    headers={props.headers}
+                    isSelected={isSelected(index())}
+                    toggleRow={toggleRow(index())}
+                  />
+                )}
+              </For>
+            </Show>
           </tbody>
         </table>
       </Scrollbar>
-      <Pagination
-        pagination={pagination}
-        onPageChange={(val: any) => {
-          setPagination({ pageNo: val })
-        }}
-        changeLimit={(limit: number) => {
-          setPagination({ pageSize: limit });
-          setPagination({
-            totalPages: Math.ceil(props?.data.length / limit || 1),
-            pageNo: 1,
-          })
-        }}
-      />
+      <Show when={props.hidePagination !== false}>
+        <Pagination
+          pagination={pagination}
+          onPageChange={(val: any) => {
+            setPagination({ pageNo: val })
+          }}
+          changeLimit={(limit: number) => {
+            setPagination({ pageSize: limit });
+            setPagination({
+              totalPages: Math.ceil(props?.data.length / limit || 1),
+              pageNo: 1,
+            })
+          }}
+        />
+      </Show>
     </Wrapper>
   );
 };

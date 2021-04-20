@@ -1,7 +1,9 @@
 import { styled } from "solid-styled-components";
 
 const Wrapper = styled("div")`
+  position: relative;
   width: 100%;
+  min-height: 300px;
 
   table {
     width: 99%;
@@ -60,6 +62,7 @@ const Wrapper = styled("div")`
     }
 
     thead tr th {
+      padding: 15px;
       input {
         cursor: pointer;
       }
@@ -71,7 +74,11 @@ const Wrapper = styled("div")`
         top: 0;
         background: ${({ theme }) => theme.colors.primary};
         box-shadow: 0 4px 2px -2px rgb(0 0 0 / 10%);
-        z-index: 1;
+        z-index: 2;
+
+        &.fixed__header {
+          z-index: 4;
+        }
       }
     }
   }

@@ -4,43 +4,42 @@ import PaginationWrapper from './styles';
 
 const Pagination: Component<any> = (props) => {
   const totalPages = createMemo(() => props?.pagination?.totalPages || 1),
-  pageNo = createMemo(() => props?.pagination?.pageNo || 1),
-  onNext = () => {
-    if (pageNo() < totalPages()) {
-      props.onPageChange(props.pagination.pageNo + 1);
-    }
-  },
-  onPrev = () => {
-    if (pageNo() > 1) {
-      props.onPageChange(pageNo() - 1);
-    }
-  },
-  PAGINATION_LIMIT = [5, 10, 15, 20, 50],  
-  renderDropdown = () => (
-    <Dropdown
-      renderBtn={
-        (open: any, setOpen: any) => (
-          <span style={{ cursor: 'default' }}>
-            {props?.pagination?.pageSize || 0}
-            <i
-              onClick={() => setOpen(!open)}
-              className={`gg-chevron ${
-                open ? 'gg-chevron-up' : 'gg-chevron-down'
-              }`}
-            />
-          </span>
-        )
+    pageNo = createMemo(() => props?.pagination?.pageNo || 1),
+    onNext = () => {
+      if (pageNo() < totalPages()) {
+        props.onPageChange(props.pagination.pageNo + 1);
       }
-    >
-      <For each={PAGINATION_LIMIT}>
-        {(limit) => (
-          <DropdownMenu
-            onClick={() => props.changeLimit(limit)}
-          >{limit}</DropdownMenu>
-        )}
-      </For>
-    </Dropdown>
-  );
+    },
+    onPrev = () => {
+      if (pageNo() > 1) {
+        props.onPageChange(pageNo() - 1);
+      }
+    },
+    PAGINATION_LIMIT = [5, 10, 15, 20, 50],
+    renderDropdown = () => (
+      <Dropdown
+        renderBtn={
+          (open: any, setOpen: any) => (
+            <span style={{ cursor: 'default' }}>
+              {props?.pagination?.pageSize || 0}
+              <i
+                onClick={() => setOpen(!open)}
+                className={`icon ${open ? 'icon-up' : 'icon-down'
+                  }`}
+              />
+            </span>
+          )
+        }
+      >
+        <For each={PAGINATION_LIMIT}>
+          {(limit) => (
+            <DropdownMenu
+              onClick={() => props.changeLimit(limit)}
+            >{limit}</DropdownMenu>
+          )}
+        </For>
+      </Dropdown>
+    );
 
   return (
     <PaginationWrapper>
@@ -56,26 +55,22 @@ const Pagination: Component<any> = (props) => {
       <div className="pagination--items">
         <div className="results">
           <i
-            className="gg-chevron gg-chevron-double-left"
+            className={`icon icon-double-left ${pageNo() === 1 ? 'disabled' : ''}`}
             onClick={() => props.onPageChange(1)}
           />
           <i
-            className={`gg-chevron gg-chevron-left ${
-              pageNo() === 1 ? 'disabled': ''
-            }`}
+            className={`icon icon-left ${pageNo() === 1 ? 'disabled' : ''}`}
             onClick={() => onPrev()}
           />
           <span className="page--number">
             {pageNo()}/{totalPages()}
           </span>
           <i
-            className={`gg-chevron gg-chevron-right ${
-              totalPages() === pageNo() ? 'disabled': ''
-            }`}
+            className={`icon icon-right ${totalPages() === pageNo() ? 'disabled' : ''}`}
             onClick={() => onNext()}
           />
           <i
-            className="gg-chevron gg-chevron-double-right"
+            className={`icon icon-double-right ${totalPages() === pageNo() ? 'disabled' : ''}`}
             onClick={() => props.onPageChange(totalPages() || 1)}
           />
         </div>
