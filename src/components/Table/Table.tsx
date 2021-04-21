@@ -75,7 +75,8 @@ const Table: Component<ITableProps> = (props: ITableProps) => {
     setPagination(props?.pagination || pagination);
     const pageNo = pagination?.pageNo || 1;
     const pageSize = pagination?.pageSize || 10;
-    setRows(props.data.slice(((pageNo * pageSize) - pageSize), pageSize * pageNo));
+    console.log(props.hidePagination)
+    setRows(props.hidePagination ? props.data : props.data.slice(((pageNo * pageSize) - pageSize), pageSize * pageNo));
   })
 
   if(props?.defaultSortDirection?.[0]) {
@@ -135,7 +136,7 @@ const Table: Component<ITableProps> = (props: ITableProps) => {
           </tbody>
         </table>
       </Scrollbar>
-      <Show when={props.hidePagination !== false}>
+      <Show when={!props.hidePagination}>
         <Pagination
           pagination={pagination}
           onPageChange={(val: any) => {

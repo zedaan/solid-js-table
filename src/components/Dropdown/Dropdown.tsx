@@ -1,36 +1,76 @@
-import { Component, createSignal, Show, For, onMount } from 'solid-js';
-import Wrapper from './styles';
+import { Component, createSignal, onMount, Show } from 'solid-js';
+import { Portal } from 'solid-js/web';
+import Wrapper, { DropdownMenu } from './styles';
 
 interface IDropdownProps {
   label?: string;
-  renderBtn?: any;
+  renderButton?: any;
   children?: any;
   position?: 'left' | 'right';
 }
 
 const Dropdown: Component<IDropdownProps> = (props) => {
-  const [isVisible, setVisible] = createSignal(false);
+  let dropdownRef: any;
+  let dropdownMenuRef: any;
+  const [isVisible, setVisible] = createSignal(false),
 
-  const renderBtn = () => (
-    <div onClick={(e) => {
-      e.preventDefault();
-      setVisible(!isVisible())
-    }}>
-      {props.label}
-    </div>
-  )
+  toggleButton = (e: any, value: any) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setVisible(value);
+    getPosition();
+    if(value) {
+      window.addEventListener('resize', getPosition)
+    } else {
+      window.removeEventListener('resize', getPosition);
+    }
+  };
+
+  const getPosition = () => {
+    const pos: any = dropdownRef.getBoundingClientRect();
+    const dropdownWidth = dropdownMenuRef.getBoundingClientRect().width;
+    const top = pos.y;
+    const left = props?.position === 'right'
+      ? (pos.x - dropdownWidth) + pos.width
+      : pos.x;
+
+    dropdownMenuRef.style.top = `${top + 30}px`;
+    dropdownMenuRef.style.left = `${left}px`;
+  }
+
+  const closeOnOutsideClick = (e: any) => {
+    if(isVisible()) {
+      setVisible(false);
+    }
+    if(!e.target.matches('.dropdown--btn *')){
+      setVisible(false);
+    }
+  }
+
+  onMount(() => {
+    document.addEventListener('click', closeOnOutsideClick, true);
+    () => {
+      document.removeEventListener('click', closeOnOutsideClick, true);
+    }
+  })
 
   return (
     <Wrapper className="dropdown" position={props?.position}>
-      <div className="dropdown--btn">
-        <Show when={props?.renderBtn} fallback={renderBtn()}>
-          {props?.renderBtn(isVisible(), setVisible)}
-        </Show>
+      <div
+        className="dropdown--btn" ref={dropdownRef}
+        onClick={(e) => toggleButton(e, !isVisible())}
+      >
+        {props?.renderButton?.(isVisible()) || props.label}
       </div>
       <Show when={isVisible()}>
-        <div className="dropdown__menu">
-          {props.children}
-        </div>
+        <Portal>
+          <DropdownMenu
+            className="dropdown__menu"
+            ref={dropdownMenuRef}
+          >
+            {props.children}
+          </DropdownMenu>
+        </Portal>
       </Show>
     </Wrapper>
   );

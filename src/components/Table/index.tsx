@@ -22,7 +22,7 @@ const App: any = () => {
   [loading, setLoading] = createSignal(false),
   [fixedHeaders, setFixedheaders] = createSignal(true),
   [fixedColum, setFixedColum] = createSignal(['left', 'right']),
-  [ShowPagination, setShowPagination] = createSignal(true),
+  [ShowPagination, setShowPagination] = createSignal(false),
   [pagination, setPagiantion] = createSignal({
     pageNo: 1,
     pageSize: 10,
@@ -82,15 +82,13 @@ const App: any = () => {
       cellRenderer: () => {
         return (
           <Dropdown
-            renderBtn={
-              (open: any, setOpen: any) => (
-                <div onClick={() => setOpen(!open)}>
-                  <div className="ellipsis"></div>
-                  <div className="ellipsis"></div>
-                  <div className="ellipsis"></div>
-                </div>
-              )
-            }
+            renderButton={() => (
+              <div>
+                <div className="ellipsis"></div>
+                <div className="ellipsis"></div>
+                <div className="ellipsis"></div>
+              </div>
+            )}
             position='right'
           >
             <DropdownMenu>Edit</DropdownMenu>

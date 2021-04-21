@@ -18,13 +18,12 @@ const Pagination: Component<any> = (props) => {
     PAGINATION_LIMIT = [5, 10, 15, 20, 50],
     renderDropdown = () => (
       <Dropdown
-        renderBtn={
-          (open: any, setOpen: any) => (
+        renderButton={
+          (isVisible: any) => (
             <span style={{ cursor: 'default' }}>
               {props?.pagination?.pageSize || 0}
               <i
-                onClick={() => setOpen(!open)}
-                className={`icon ${open ? 'icon-up' : 'icon-down'
+                className={`icon ${isVisible ? 'icon-up' : 'icon-down'
                   }`}
               />
             </span>
