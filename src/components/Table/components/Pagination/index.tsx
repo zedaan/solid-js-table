@@ -1,4 +1,4 @@
-import { Component, For, createComputed, createMemo } from 'solid-js';
+import { Component, For, createMemo } from 'solid-js';
 import Dropdown, { DropdownMenu } from '../../../Dropdown';
 import PaginationWrapper from './styles';
 

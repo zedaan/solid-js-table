@@ -9,6 +9,7 @@ const Wrapper: any = styled('div')`
 export const DropdownMenu = styled('div')`
   position: absolute;
   min-width: 100px;
+  top: 28px;
   left: ${({ position }: any) => position === 'left' ? '0' : 'auto'};
   right: ${({ position }: any) => position === 'right' ? '0' : 'auto'};
   box-shadow: 0px 2px 10px 2px rgb(0 0 0 / 25%);
