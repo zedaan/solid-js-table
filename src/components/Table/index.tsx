@@ -1,4 +1,4 @@
-import { createSignal } from 'solid-js';
+import { createComputed, createMemo, createSignal } from 'solid-js';
 import Table from "./Table";
 import Dropdown, { DropdownMenu } from '../Dropdown';
 import Button from '../Button';
@@ -29,7 +29,7 @@ const App: any = () => {
     total: generateData().length,
     totalPages: Math.ceil(generateData().length / 10),
   }),
-  headers = [
+  headers = createMemo(() => [
     {
       header: "checkbox",
       render: (props: any) => (
@@ -97,7 +97,7 @@ const App: any = () => {
         );
       }
     }
-  ];
+  ]);
 
   return (
     <div>
@@ -105,6 +105,7 @@ const App: any = () => {
         <Button onClick={() => setLoading(!loading())}>Toggle Loading</Button>
         <Button onClick={() => setFixedheaders(!fixedHeaders())}>Toggle Fixed Headers</Button>
         <Button onClick={() => setShowPagination(!ShowPagination())}>Toggle ShowPagination</Button>
+        <Button onClick={() => setFixedColum(fixedColum().length ? [] : ['left', 'right'])}>Toggle Fixed Columns</Button>
         <Button onClick={() => {
           setData(data().length ? [] : generateData())
           setPagiantion({
@@ -116,7 +117,7 @@ const App: any = () => {
         }}>Toggle Empty State</Button>
       </div>
       <Table
-        headers={headers}
+        headers={headers()}
         data={data()}
         className="table"
         wrapperClass="wrapper--class"

@@ -61,7 +61,10 @@ const Table: Component<ITableProps> = (props: ITableProps) => {
       };
     },
     sortItems = (e: any, columnID: any) => {
-      setSortDirection(onSortHandler({ sortDirection: getSortDirection(), columnID, e }))
+      setSortDirection(onSortHandler({
+        sortDirection: getSortDirection(),
+        columnID, e
+      }))
       sortRows();
     },
     [pagination, setPagination] = createState(props?.pagination || {
@@ -76,10 +79,16 @@ const Table: Component<ITableProps> = (props: ITableProps) => {
     const pageNo = pagination?.pageNo || 1;
     const pageSize = pagination?.pageSize || 10;
     console.log(props.hidePagination)
-    setRows(props.hidePagination ? props.data : props.data.slice(((pageNo * pageSize) - pageSize), pageSize * pageNo));
+    setRows(
+      props.hidePagination
+        ? props.data
+        : props.data.slice(
+          ((pageNo * pageSize) - pageSize), pageSize * pageNo
+        )
+    );
   })
 
-  if(props?.defaultSortDirection?.[0]) {
+  if (props?.defaultSortDirection?.[0]) {
     sortItems({}, props.defaultSortDirection[0]);
   }
 
@@ -91,7 +100,7 @@ const Table: Component<ITableProps> = (props: ITableProps) => {
       <Scrollbar fixed={props.fixedHeaders}>
         <table className={props.className}>
           <thead>
-            <tr className={props.fixedHeaders ? 'fixed--header__row': ''}>
+            <tr className={props.fixedHeaders ? 'fixed--header__row' : ''}>
               <For each={props.headers}>
                 {(column: any) => (
                   <HeaderCell
@@ -113,7 +122,7 @@ const Table: Component<ITableProps> = (props: ITableProps) => {
             </tr>
           </thead>
           <tbody>
-            <Show 
+            <Show
               when={getRows().length}
               fallback={
                 !props.loading && (
