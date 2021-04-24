@@ -147,6 +147,17 @@ const ButtonWrapper: any = styled('button')`
     pointer-events: none;
     opacity: 0.4;
   }
+
+  &.btn--block {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    height: 48px;
+
+    &:active {
+      transform: scale(0.985);
+    }
+  }
 `;
 
 

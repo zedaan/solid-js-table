@@ -46,4 +46,13 @@ export default styled('div')`
       }
     }
   }
+
+  .btn---demo {
+    max-width: 900px;
+    padding-right: 40px;
+    
+    button {
+      margin: 40px 0;
+    }
+  }
 `;

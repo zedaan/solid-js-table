@@ -6,6 +6,7 @@ import { Tab, Tabs } from '../../components/Tabs';
 import Scrollbar from '../../components/Scrollbar';
 import Icon from '../../components/Icons';
 import Wrapper from "./styles";
+import Button from '../../components/ButtonNew';
 
 const App: Component = () => {
   const [isActive, setIsActive] = createSignal(0);
@@ -52,6 +53,15 @@ const App: Component = () => {
 
             <h4 className="sub--heading" style={{ "font-size": '24px' }}>Loading button</h4>
             <RenderButton title="Loading" loading />
+
+            <h4 className="sub--heading" style={{ "font-size": '24px', "margin-bottom": '20px' }}>Block button</h4>
+            <div className="btn---demo">
+              <Button block={true}>Block</Button>
+              <Button variant="primary" block={true}>Block</Button>
+              <Button variant="ghost" block={true}>Block</Button>
+              <Button variant="ghost-primary" block={true}>Block</Button>
+              <Button variant="ghost-danger" block={true}>Block</Button>
+            </div>
           </Scrollbar>
         </Tab>
         <Tab label="Table">

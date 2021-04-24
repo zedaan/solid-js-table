@@ -12,6 +12,7 @@ interface IButtonProps {
   iconAfter?: any;
   children?: any;
   loading?: boolean;
+  block?: boolean;
 }
 
 const Button: Component<IButtonProps> = (props) => {
@@ -23,6 +24,7 @@ const Button: Component<IButtonProps> = (props) => {
     iconBefore,
     iconAfter,
     loading,
+    block,
     ...rest
   } = props;
 
@@ -49,7 +51,7 @@ const Button: Component<IButtonProps> = (props) => {
 
   return (
     <ButtonWrapper
-      className={`btn--${variant || 'default'} ${className || ''} btn--${size || 'sm'} ${loading ? 'btn--loading': ''}`}
+      className={`btn--${variant || 'default'} ${className || ''} btn--${size || 'sm'} ${loading ? 'btn--loading': ''} ${block ? 'btn--block' : ''}`}
       {...rest}
       disabled={variant === 'disabled'}
     >
