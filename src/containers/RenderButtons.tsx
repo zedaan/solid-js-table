@@ -8,7 +8,7 @@ const RenderButton: Component<any> = (props) => {
       <div>
         <div className="btn-group">
           <For each={buttonSizes}>
-            {(size) => (
+            {(size: string) => (
               <div
                 style={{
                   flex: 1,
@@ -18,9 +18,9 @@ const RenderButton: Component<any> = (props) => {
                 <Button
                   variant={props.variant}
                   size={size}
-                  icon={props.icon}
                   iconBefore={props.iconBefore}
                   iconAfter={props.iconAfter}
+                  loading={props.loading}
                 >
                   {props.title}
                 </Button>

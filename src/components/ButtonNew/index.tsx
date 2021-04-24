@@ -1,20 +1,62 @@
 import { Component, Show } from 'solid-js';
 import ButtonWrapper from './styles';
+import LoadingIcon from '../Table/components/LoadingState/LoadingIcon';
 
-const Button: Component<any> = (props) => {
-  const { children, variant, className, size, iconBefore, iconAfter, ...rest } = props;
+type IVariant = 'primary' | 'danger' | 'ghost' | 'ghost-primary' | 'ghost-danger' | 'disabled';
+
+interface IButtonProps {
+  variant?: IVariant;
+  className?: string;
+  size?: string;
+  iconBefore?: any;
+  iconAfter?: any;
+  children?: any;
+  loading?: boolean;
+}
+
+const Button: Component<IButtonProps> = (props) => {
+  const {
+    children,
+    variant,
+    className,
+    size,
+    iconBefore,
+    iconAfter,
+    loading,
+    ...rest
+  } = props;
+
+  const renderLeftIcon = () => (
+    <Show when={iconBefore}>
+      <span className="icon icon--left">{iconBefore}</span>
+    </Show>
+  )
+
+  const renderRightICon = () => (
+    <Show when={iconAfter}>
+      <span className="icon icon--right">{iconAfter}</span>
+    </Show>
+  )
+
+  const renderLoading = () => (
+    <Show when={loading}>
+      <span className="loading--icon">
+        <LoadingIcon />
+      </span>
+      Loading
+    </Show>
+  )
 
   return (
     <ButtonWrapper
-      className={`btn--${variant || 'default'} ${className || ''} btn--${size || 'small'}`}
+      className={`btn--${variant || 'default'} ${className || ''} btn--${size || 'sm'} ${loading ? 'btn--loading': ''}`}
       {...rest}
+      disabled={variant === 'disabled'}
     >
-      <Show when={iconBefore}>
-        <span className="icon icon--left">{iconBefore}</span>
-      </Show>
-      {props.children}
-      <Show when={iconAfter}>
-        <span className="icon icon--right">{iconAfter}</span>
+      <Show when={!loading} fallback={renderLoading()}>
+        {renderLeftIcon()}
+        {props.children}
+        {renderRightICon()}
       </Show>
     </ButtonWrapper>
   )

@@ -1,6 +1,6 @@
 import { styled } from 'solid-styled-components';
 
-const ButtonWrapper = styled('button')`
+const ButtonWrapper: any = styled('button')`
   display: flex;
   color: ${(props) => props.theme.colors.primaryText};
   background: #121111;
@@ -130,6 +130,22 @@ const ButtonWrapper = styled('button')`
     &:focus {
       transform: none;
     }
+  }
+
+  .loading--icon {
+    i:after,
+    i {
+      height: 10px;
+      width: 10px;
+      padding: 0;
+      transform: translateY(-2px);
+      margin-right: 13px;
+    }
+  }
+
+  &.btn--loading {
+    pointer-events: none;
+    opacity: 0.4;
   }
 `;
 

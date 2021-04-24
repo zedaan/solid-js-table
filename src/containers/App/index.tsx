@@ -49,6 +49,9 @@ const App: Component = () => {
             <RenderButton title="Primary" variant="primary" iconAfter={<Icon  color="#E9E9E9"/>} />
             <RenderButton title="Ghost" variant="ghost" iconAfter={<Icon color="#E9E9E9" />} />
             <RenderButton title="Primary"variant="ghost-primary" iconAfter={<Icon color="#0095F8" />} />
+
+            <h4 className="sub--heading" style={{ "font-size": '24px' }}>Loading button</h4>
+            <RenderButton title="Loading" loading />
           </Scrollbar>
         </Tab>
         <Tab label="Table">
