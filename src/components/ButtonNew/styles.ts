@@ -38,27 +38,27 @@ const ButtonWrapper = styled('button')`
   &.btn--lg {
     font-size: 1em;
     height: 56px;
-    padding: 0 48px;
+    padding: 0 40px;
   }
   
   &.btn--md {
     font-size: 1em;
     height: 48px;
-    padding: 0 30px;
+    padding: 0 32px;
   }
   
   &.btn--sm {
     font-size: 0.875em;
     font-weight: 500;
     height: 40px;
-    padding: 0 32px;
+    padding: 0 24px;
   }
   
   &.btn--xs {
     font-size: 0.75em;
     font-weight: normal;
     height: 32px;
-    padding: 0 24px;
+    padding: 0 16px;
   }  
 
   &.btn--primary {
