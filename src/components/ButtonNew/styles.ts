@@ -19,6 +19,10 @@ const ButtonWrapper = styled('button')`
     margin-right: 11px;
   }
 
+  .icon--right {
+    margin-left: 11px;
+  }
+
   &:active,
   &:visited,
   &:focus,  

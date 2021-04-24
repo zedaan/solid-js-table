@@ -35,11 +35,20 @@ const App: Component = () => {
             <RenderButton title="Primary" variant="ghost-primary" />
             <RenderButton title="Danger" variant="ghost-danger" />
             <RenderButton title="Disabled" variant="disabled" />
+
             <h4 className="sub--heading" style={{ "font-size": '24px' }}>Button w/left icons</h4>
-            <RenderButton title="Default" variant="default"  icon={<Icon  color="#E9E9E9"/>} />
-            <RenderButton title="Primary" variant="primary" icon={<Icon  color="#E9E9E9"/>} />
-            <RenderButton title="Ghost" variant="ghost"  icon={<Icon color="#E9E9E9" />} />
-            <RenderButton title="Primary"variant="ghost-primary"  icon={<Icon color="#0095F8" />} />
+          
+            <RenderButton title="Default" variant="default" iconBefore={<Icon  color="#E9E9E9"/>} />
+            <RenderButton title="Primary" variant="primary" iconBefore={<Icon  color="#E9E9E9"/>} />
+            <RenderButton title="Ghost" variant="ghost" iconBefore={<Icon color="#E9E9E9" />} />
+            <RenderButton title="Primary"variant="ghost-primary" iconBefore={<Icon color="#0095F8" />} />
+
+            <h4 className="sub--heading" style={{ "font-size": '24px' }}>Button w/left icons</h4>
+          
+            <RenderButton title="Default" variant="default" iconAfter={<Icon  color="#E9E9E9"/>} />
+            <RenderButton title="Primary" variant="primary" iconAfter={<Icon  color="#E9E9E9"/>} />
+            <RenderButton title="Ghost" variant="ghost" iconAfter={<Icon color="#E9E9E9" />} />
+            <RenderButton title="Primary"variant="ghost-primary" iconAfter={<Icon color="#0095F8" />} />
           </Scrollbar>
         </Tab>
         <Tab label="Table">

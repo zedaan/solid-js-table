@@ -19,6 +19,8 @@ const RenderButton: Component<any> = (props) => {
                   variant={props.variant}
                   size={size}
                   icon={props.icon}
+                  iconBefore={props.iconBefore}
+                  iconAfter={props.iconAfter}
                 >
                   {props.title}
                 </Button>
