@@ -18,8 +18,11 @@ const PlusIcon = styled('i')`
     position: absolute;
     width: 2px;
     height: 10px;
-    top: -4px;
-    left: 4px;
+    margin: auto;
+    left: 0;
+    top: 0;
+    right: 0px;
+    bottom: 0;
   }
 `;
 
