@@ -5,7 +5,7 @@ const ButtonWrapper: any = styled('button')`
   color: ${(props) => props.theme.colors.primaryText};
   background: #121111;
   cursor: pointer;
-  font-family: Inter;
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 600;
   align-items: center;

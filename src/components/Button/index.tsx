@@ -4,7 +4,7 @@ const Button = styled('button')`
   color: #E9E9E9;
   background: #1211117a;
   cursor: pointer;
-  font-family: Inter;
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
