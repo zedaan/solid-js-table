@@ -7,6 +7,7 @@ import Scrollbar from '../../components/Scrollbar';
 import Icon from '../../components/Icons';
 import Wrapper from "./styles";
 import Button from '../../components/ButtonNew';
+import Input from "../../components/input"
 
 const App: Component = () => {
   const [isActive, setIsActive] = createSignal(0);
@@ -15,60 +16,66 @@ const App: Component = () => {
   return (
     <Wrapper>
       <div className="app__content">
-      <Tabs activeTab={isActive} onChange={setIsActive}>
-        <Tab label="Buttons">
-          <Scrollbar style={{ 'max-height': `${window.innerHeight - 150}px` }}>
-            <h2 className="heading">Buttons Demo</h2>
-            <hr />
-            <div className="btn-group">
-              <For each={buttons}>
-                {(item) => (
-                  <div style={{ flex: 1 }}>
-                    <h4>{item}</h4>
-                  </div>
-                )}
-              </For>
-            </div>
-            <RenderButton title="Default" />
-            <RenderButton title="Primary" variant="primary" />
-            <RenderButton title="Danger" variant="danger" />
-            <RenderButton title="Ghost" variant="ghost" />
-            <RenderButton title="Primary" variant="ghost-primary" />
-            <RenderButton title="Danger" variant="ghost-danger" />
-            <RenderButton title="Disabled" variant="disabled" />
+        <Tabs activeTab={isActive} onChange={setIsActive}>
+          <Tab label="Buttons">
+            <Scrollbar style={{ 'max-height': `${window.innerHeight - 150}px` }}>
+              <h2 className="heading">Buttons Demo</h2>
+              <hr />
+              <div className="btn-group">
+                <For each={buttons}>
+                  {(item) => (
+                    <div style={{ flex: 1 }}>
+                      <h4>{item}</h4>
+                    </div>
+                  )}
+                </For>
+              </div>
+              <RenderButton title="Default" />
+              <RenderButton title="Primary" variant="primary" />
+              <RenderButton title="Danger" variant="danger" />
+              <RenderButton title="Ghost" variant="ghost" />
+              <RenderButton title="Primary" variant="ghost-primary" />
+              <RenderButton title="Danger" variant="ghost-danger" />
+              <RenderButton title="Disabled" variant="disabled" />
 
-            <h4 className="sub--heading" style={{ "font-size": '24px' }}>Button w/left icons</h4>
-          
-            <RenderButton title="Default" variant="default" iconBefore={<Icon  color="#E9E9E9"/>} />
-            <RenderButton title="Primary" variant="primary" iconBefore={<Icon  color="#E9E9E9"/>} />
-            <RenderButton title="Ghost" variant="ghost" iconBefore={<Icon color="#E9E9E9" />} />
-            <RenderButton title="Primary"variant="ghost-primary" iconBefore={<Icon color="#0095F8" />} />
+              <h4 className="sub--heading" style={{ "font-size": '24px' }}>Button w/left icons</h4>
 
-            <h4 className="sub--heading" style={{ "font-size": '24px' }}>Button w/right icons</h4>
-          
-            <RenderButton title="Default" variant="default" iconAfter={<Icon  color="#E9E9E9"/>} />
-            <RenderButton title="Primary" variant="primary" iconAfter={<Icon  color="#E9E9E9"/>} />
-            <RenderButton title="Ghost" variant="ghost" iconAfter={<Icon color="#E9E9E9" />} />
-            <RenderButton title="Primary"variant="ghost-primary" iconAfter={<Icon color="#0095F8" />} />
+              <RenderButton title="Default" variant="default" iconBefore={<Icon color="#E9E9E9" />} />
+              <RenderButton title="Primary" variant="primary" iconBefore={<Icon color="#E9E9E9" />} />
+              <RenderButton title="Ghost" variant="ghost" iconBefore={<Icon color="#E9E9E9" />} />
+              <RenderButton title="Primary" variant="ghost-primary" iconBefore={<Icon color="#0095F8" />} />
 
-            <h4 className="sub--heading" style={{ "font-size": '24px' }}>Loading button</h4>
-            <RenderButton title="Loading" loading />
+              <h4 className="sub--heading" style={{ "font-size": '24px' }}>Button w/right icons</h4>
 
-            <h4 className="sub--heading" style={{ "font-size": '24px', "margin-bottom": '20px' }}>Block button</h4>
-            <div className="btn---demo">
-              <Button block={true}>Block</Button>
-              <Button variant="primary" block={true}>Block</Button>
-              <Button variant="ghost" block={true}>Block</Button>
-              <Button variant="ghost-primary" block={true}>Block</Button>
-              <Button variant="ghost-danger" block={true}>Block</Button>
-            </div>
-          </Scrollbar>
-        </Tab>
-        <Tab label="Table">
-          <h2 style={{ color: "#fff" }}>Table Demo</h2>
-          <Table headers={headers} data={data} />
-        </Tab>
-      </Tabs>
+              <RenderButton title="Default" variant="default" iconAfter={<Icon color="#E9E9E9" />} />
+              <RenderButton title="Primary" variant="primary" iconAfter={<Icon color="#E9E9E9" />} />
+              <RenderButton title="Ghost" variant="ghost" iconAfter={<Icon color="#E9E9E9" />} />
+              <RenderButton title="Primary" variant="ghost-primary" iconAfter={<Icon color="#0095F8" />} />
+
+              <h4 className="sub--heading" style={{ "font-size": '24px' }}>Loading button</h4>
+              <RenderButton title="Loading" loading />
+
+              <h4 className="sub--heading" style={{ "font-size": '24px', "margin-bottom": '20px' }}>Block button</h4>
+              <div className="btn---demo">
+                <Button block={true}>Block</Button>
+                <Button variant="primary" block={true}>Block</Button>
+                <Button variant="ghost" block={true}>Block</Button>
+                <Button variant="ghost-primary" block={true}>Block</Button>
+                <Button variant="ghost-danger" block={true}>Block</Button>
+              </div>
+            </Scrollbar>
+          </Tab>
+          <Tab label="Table">
+            <h2 style={{ color: "#fff" }}>Table Demo</h2>
+            <Table headers={headers} data={data} />
+          </Tab>
+          <Tab label="Input">
+            <h2 style={{ color: "#fff" }}>Input Demo</h2>
+            <Input placeholder="Name" />
+            <br />
+            <Input placeholder="Email" />
+          </Tab>
+        </Tabs>
       </div>
     </Wrapper>
   );

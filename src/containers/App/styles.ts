@@ -17,7 +17,7 @@ export default styled('div')`
     }
 
     .heading {
-      font-size: 2em;
+      font-size: 1.5em;
       color: ${({ theme }) => theme?.colors.primaryText};
     }
 
