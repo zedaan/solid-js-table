@@ -31,7 +31,7 @@ export default styled('div')`
 
     .btn-group {
       display: flex;
-      max-width: 1024px;
+      max-width: 1192px;
       justify-content: space-between;
       align-items: center;
       margin: 20px 0;
@@ -57,7 +57,7 @@ export default styled('div')`
   }
 
   .btn---demo {
-    max-width: 900px;
+    max-width: 1100px;
     padding-right: 40px;
     
     button {
