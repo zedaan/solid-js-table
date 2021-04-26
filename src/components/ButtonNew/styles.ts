@@ -12,8 +12,9 @@ const ButtonWrapper: any = styled('button')`
   line-height: 0;
   border: 1px solid #121111;
   border-radius: 0.75em;
+  transform: scale(1);
+  -webkit-font-smoothing: subpixel-antialiased;
   transition: 0.15s ease-in;
-  backface-visibility: hidden;
 
   .icon--left {
     margin-right: 11px;
@@ -75,11 +76,11 @@ const ButtonWrapper: any = styled('button')`
 
   &.btn--primary {
     background-color: #0095F8;
-    border-color: #0095F8;
+    border: 1px solid #0095F8;
 
     &:hover {
       background-color: #0089E4;
-      border-color: #0089E4;
+      border: 1px solid #0089E4;
     }
   }
 
