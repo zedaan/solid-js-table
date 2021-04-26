@@ -34,11 +34,11 @@ const Scrollbar: any = styled('div')`
   &::-webkit-scrollbar-thumb {
     background-color: #69696914;
     border-radius: 15px;
-    border: 3px solid #69696914;
+    border: 1px solid rgba(255, 255, 255, 0.03);
   }
 
   &::-webkit-scrollbar-corner {
-    background: ${({ theme }) => theme.colors.primary};
+    background: transparent;
   }
 `
 

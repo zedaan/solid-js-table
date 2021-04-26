@@ -10,7 +10,7 @@ import Button from '../../components/ButtonNew';
 
 const App: Component = () => {
   const [isActive, setIsActive] = createSignal(0);
-  const buttons = ['Large', 'Medium', 'Small', 'Extra Small'];
+  const buttons = ['Extra Large', 'Large', 'Medium', 'Small', 'Extra Small'];
 
   return (
     <Wrapper>

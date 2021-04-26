@@ -12,8 +12,8 @@ const ButtonWrapper: any = styled('button')`
   line-height: 0;
   border: 1px solid #121111;
   border-radius: 0.75em;
+  transition: 0.15s ease-in;
   backface-visibility: hidden;
-  transition: 0.1s ease-in;
 
   .icon--left {
     margin-right: 11px;
@@ -35,27 +35,35 @@ const ButtonWrapper: any = styled('button')`
     border-color: #1C1B1B;
   }
 
-  &:active {
+  &:active,
+  &.active {
     transform: scale(0.95);
   }
 
-  &.btn--lg {
+  &.btn--xl {
     font-size: 1em;
     height: 56px;
     padding: 0 40px;
   }
   
-  &.btn--md {
+  &.btn--lg {
     font-size: 1em;
     height: 48px;
     padding: 0 32px;
   }
   
-  &.btn--sm {
+  &.btn--md {
     font-size: 0.875em;
     font-weight: 500;
     height: 40px;
     padding: 0 24px;
+  }
+  
+  &.btn--sm {
+    font-size: 0.75em;
+    font-weight: normal;
+    height: 36px;
+    padding: 0 20px;
   }
   
   &.btn--xs {
@@ -63,7 +71,7 @@ const ButtonWrapper: any = styled('button')`
     font-weight: normal;
     height: 32px;
     padding: 0 16px;
-  }  
+  }
 
   &.btn--primary {
     background-color: #0095F8;
@@ -154,7 +162,8 @@ const ButtonWrapper: any = styled('button')`
     justify-content: center;
     height: 48px;
 
-    &:active {
+    &:active,
+    &.active {
       transform: scale(0.985);
     }
   }

@@ -2,7 +2,7 @@ import { Component, For } from 'solid-js';
 import Button from '../components/ButtonNew';
 
 const RenderButton: Component<any> = (props) => {
-  const buttonSizes = ['lg', 'md', 'sm', 'xs'];
+  const buttonSizes = ['xl', 'lg', 'md', 'sm', 'xs'];
   return (
     <div>
       <div>

@@ -35,14 +35,23 @@ export default styled('div')`
       justify-content: space-between;
       align-items: center;
       margin: 20px 0;
+      flex-wrap: wrap;
+
+      @media(max-width: 560px) {
+        > * {
+          flex: auto !important;
+          width: 100%;
+        }
+      }
 
       h4 {
         color: ${({ theme }) => theme.colors.primaryText};
         margin: 10px 0;
-        padding-left: 15px;
+        padding-left: 5px;
         padding-bottom: 10px;
         font-size: 1em;
         font-weight: 300;
+
       }
     }
   }
