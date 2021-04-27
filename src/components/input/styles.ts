@@ -18,8 +18,8 @@ const InputWrapper: any = styled("div")<any>`
       outline: none;
       align-items: center;
       padding: 0px 20px;
-      padding-left: ${({ iconLeft }) => iconLeft ? '50px' : 'auto'};
-      padding-right: ${({ iconRight }) => iconRight ? '50px' : 'auto'};
+      padding-left: ${({ iconLeft }) => iconLeft ? '45px' : 'auto'};
+      padding-right: ${({ iconRight }) => iconRight ? '45px' : 'auto'};
     }
   
     &.input--lg {

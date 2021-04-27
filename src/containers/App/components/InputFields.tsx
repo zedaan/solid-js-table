@@ -29,7 +29,7 @@ const RenderInputFields = () => {
         <Input placeholder="Address" size='sm' label="Address" />
       </div>
       <div>
-        <Input placeholder="Test" size='xs' label="Test" />
+        <Input placeholder="Website" size='xs' label="Website" />
       </div>
 
       <h3 style={{ color: '#fff'}}>Input with left icons</h3>
@@ -43,7 +43,7 @@ const RenderInputFields = () => {
         <Input placeholder="Address" size='sm' iconLeft={<PlusIcon color="#fff" />} />
       </div>
       <div>
-        <Input placeholder="Test" size='xs' iconLeft={<PlusIcon color="#fff" />} />
+        <Input placeholder="Website" size='xs' iconLeft={<PlusIcon color="#fff" />} />
       </div>
 
       <h3 style={{ color: '#fff'}}>Input with right icons</h3>
@@ -57,7 +57,7 @@ const RenderInputFields = () => {
         <Input placeholder="Address" size='sm' iconRight={<PlusIcon color="#fff" />} />
       </div>
       <div>
-        <Input placeholder="Test" size='xs' iconRight={<PlusIcon color="#fff" />} />
+        <Input placeholder="Website" size='xs' iconRight={<PlusIcon color="#fff" />} />
       </div>
     </Wrapper>
   )
