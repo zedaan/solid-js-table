@@ -54,7 +54,7 @@ const InputWrapper: any = styled("div")<any>`
       input[type="text"] {
         height: 32px;
         line-height: 32px;
-        font-size: 0.9375em;
+        font-size: 0.875em;
         border-radius: 0.5em;
       }
     }
