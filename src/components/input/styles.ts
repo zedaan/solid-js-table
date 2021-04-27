@@ -27,7 +27,7 @@ const InputWrapper: any = styled("div")<any>`
       input[type="text"] {
         height: 56px;
         line-height: 56px;
-        font-size: 1.1em;
+        font-size: 1em;
       }
     }
     
@@ -45,7 +45,7 @@ const InputWrapper: any = styled("div")<any>`
       input[type="text"] {
         height: 40px;
         line-height: 40px;
-        font-size: 1em;
+        font-size: 0.9375em;
       }
     }
     

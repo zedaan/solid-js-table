@@ -64,4 +64,8 @@ export default styled('div')`
       margin: 40px 0;
     }
   }
+
+  .item--radio {
+    margin: 15px 0;
+  }
 `;

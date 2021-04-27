@@ -48,7 +48,7 @@ const RenderInputFields = () => {
 
       <h3 style={{ color: '#fff'}}>Input with right icons</h3>
       <div>
-        <Input placeholder="Name" size='lg' iconRight={<PlusIcon color="#fff"/>} />
+        <Input placeholder="Name" size='lg' />
       </div>
       <div>
         <Input placeholder="Email" size='md' iconRight={<PlusIcon color="#fff" />} />
@@ -58,6 +58,20 @@ const RenderInputFields = () => {
       </div>
       <div>
         <Input placeholder="Website" size='xs' iconRight={<PlusIcon color="#fff" />} />
+      </div>
+
+      <h3 style={{ color: '#fff'}}>Disabled</h3>
+      <div>
+        <Input placeholder="Name" size='lg' disabled />
+      </div>
+      <div>
+        <Input placeholder="Email" size='md' disabled />
+      </div>
+      <div>
+        <Input placeholder="Address" size='sm' disabled />
+      </div>
+      <div>
+        <Input placeholder="Website" size='xs' disabled />
       </div>
     </Wrapper>
   )

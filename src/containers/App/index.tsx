@@ -7,10 +7,11 @@ import Scrollbar from '../../components/Scrollbar';
 import Icon from '../../components/Icons';
 import Button from '../../components/ButtonNew';
 import RenderInputFields from './components/InputFields';
+import RadioInput from './components/RadioInput';
 import Wrapper from "./styles";
 
 const App: Component = () => {
-  const [isActive, setIsActive] = createSignal(2);
+  const [isActive, setIsActive] = createSignal(3);
   const buttons = ['Extra Large', 'Large', 'Medium', 'Small', 'Extra Small'];
 
   return (
@@ -72,6 +73,10 @@ const App: Component = () => {
           <Tab label="Input">
             <h2 style={{ color: "#fff" }}>Input Demo</h2>
             <RenderInputFields />
+          </Tab>
+          <Tab label="Radio">
+            <h2 style={{ color: "#fff" }}>Radio Input Demo</h2>
+            <RadioInput />
           </Tab>
         </Tabs>
       </div>

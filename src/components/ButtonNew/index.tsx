@@ -53,13 +53,13 @@ const Button: Component<IButtonProps> = (props) => {
 
   return (
     <ButtonWrapper
-      className={`btn--${variant || 'default'} ${className || ''} btn--${size || 'sm'} ${loading ? 'btn--loading': ''} ${block ? 'btn--block' : ''}`}
+      className={`btn--${variant || 'default'} ${className || ''} btn--${size || 'sm'} ${loading ? 'btn--loading' : ''} ${block ? 'btn--block' : ''}`}
       {...rest}
       disabled={variant === 'disabled'}
       onClick={(e: any) => {
         e.target.classList.add('active');
         setTimeout(() => {
-          console.log({e: e.target});
+          console.log({ e: e.target });
           e.target.classList.remove('active');
         }, 150);
         onClick && onClick(e);
