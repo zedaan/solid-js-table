@@ -5,12 +5,12 @@ import RenderButton from '../RenderButtons';
 import { Tab, Tabs } from '../../components/Tabs';
 import Scrollbar from '../../components/Scrollbar';
 import Icon from '../../components/Icons';
-import Wrapper from "./styles";
 import Button from '../../components/ButtonNew';
-import Input from "../../components/input"
+import RenderInputFields from './components/InputFields';
+import Wrapper from "./styles";
 
 const App: Component = () => {
-  const [isActive, setIsActive] = createSignal(0);
+  const [isActive, setIsActive] = createSignal(2);
   const buttons = ['Extra Large', 'Large', 'Medium', 'Small', 'Extra Small'];
 
   return (
@@ -71,9 +71,7 @@ const App: Component = () => {
           </Tab>
           <Tab label="Input">
             <h2 style={{ color: "#fff" }}>Input Demo</h2>
-            <Input placeholder="Name" />
-            <br />
-            <Input placeholder="Email" />
+            <RenderInputFields />
           </Tab>
         </Tabs>
       </div>
