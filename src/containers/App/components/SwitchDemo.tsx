@@ -32,6 +32,31 @@ const Switch: Component<any> = (props) => {
         <SwitchDemo
           onChange={(e: any) => setActive(!isActive())}
           checked={isActive()}
+          size="lg"
+          checkedLabel="Yes"
+          unCheckedLabel="No"
+          style={{ 'margin-right': '25px' }}
+          />
+        <SwitchDemo
+          onChange={(e: any) => setActive(!isActive())}
+          checked={isActive()}
+          size="md"
+          checkedLabel="Yes"
+          unCheckedLabel="No"
+          style={{ 'margin-right': '25px' }}
+          />
+        <SwitchDemo
+          onChange={(e: any) => setActive(!isActive())}
+          checked={isActive()}
+          size="sm"
+          checkedLabel="Yes"
+          unCheckedLabel="No"
+          style={{ 'margin-right': '25px' }}
+        />
+
+        <SwitchDemo
+          onChange={(e: any) => setActive(!isActive())}
+          checked={isActive()}
           size="xs"
           checkedLabel="Yes"
           unCheckedLabel="No"

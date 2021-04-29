@@ -3,10 +3,11 @@ import SwitchWrapper from './styles';
 
 
 const Switch: Component<any> = (props) => {
-  const { size, checkedLabel, unCheckedLabel, className, ...rest } = props;
+  const { style, size, checkedLabel, unCheckedLabel, className, ...rest } = props;
   return (
     <SwitchWrapper
       className={`${className || ''} switch--${size || 'sm'} ${props.checked ? 'switch--checked' : 'switch--unchecked'}`}
+      style={style}
     >
       <Show when={unCheckedLabel}>
         <div className="label--unchecked">

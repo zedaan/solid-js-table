@@ -58,6 +58,17 @@ const SwitchWrapper: any = styled("label")`
     border-radius: 50%;
   }
 
+  .label--unchecked,
+  .label--checked {
+    position: absolute;
+    cursor: pointer;
+    color: ${(props) => props.theme.colors.primaryText};
+    font-size: 0.875em;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
   &.switch--lg {
     min-width: 150px;
     height: 56px;
@@ -73,6 +84,12 @@ const SwitchWrapper: any = styled("label")`
       height: 46px;
       width: 46px;
       left: 6px;
+    }
+
+    .label--unchecked,
+    .label--checked {
+      font-size: 1em;
+      font-weight: 500;
     }
   }
 
@@ -91,6 +108,12 @@ const SwitchWrapper: any = styled("label")`
       height: 40px;
       width: 40px;
       left: 5px;
+    }
+
+    .label--unchecked,
+    .label--checked {
+      font-size: 0.9375em;
+      font-weight: 500;
     }
   }
 
@@ -130,25 +153,13 @@ const SwitchWrapper: any = styled("label")`
     }
   }
 
-  .label--unchecked,
   .label--checked {
-    position: absolute;
-    cursor: pointer;
-    color: ${(props) => props.theme.colors.primaryText};
-    font-size: 14px;
-    left: 15px;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-  }
-
-  .label--checked {
-    left: 15px;
+    left: 22%;
     right: auto;
   }
 
   .label--unchecked {
-    right: 15px;
+    right: 22%;
     left: auto;
   }
 
