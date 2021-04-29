@@ -192,6 +192,12 @@ const SwitchWrapper: any = styled("label")`
     }
   }
 
+  &.disabled,
+  &.disabled > * {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+
 `;
 
 export default SwitchWrapper;
