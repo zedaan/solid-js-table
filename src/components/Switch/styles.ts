@@ -1,0 +1,186 @@
+import { styled } from "solid-styled-components";
+
+const SwitchWrapper: any = styled("label")`
+  position: relative;
+  display: inline-block;
+  min-width: 60px;
+  height: 24px;
+  transition: 0.4s all;
+  animation-direction: alternate;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: ${(props) => props.theme.colors.inActive};
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    background-color: white;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196f3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 0 2px rgb(24 144 255 / 20%);
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(35px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  &.switch--lg {
+    min-width: 150px;
+    height: 56px;
+    line-height: 56px;
+
+    input:checked + .slider:before {
+      transform: translateX(92px);
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 46px;
+      width: 46px;
+      left: 6px;
+    }
+  }
+
+  &.switch--md {
+    min-width: 120px;
+    height: 48px;
+    line-height: 48px;
+
+    input:checked + .slider:before {
+      transform: translateX(70px);
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 40px;
+      width: 40px;
+      left: 5px;
+    }
+  }
+
+  &.switch--sm {
+    min-width: 100px;
+    height: 40px;
+    line-height: 40px;
+
+    input:checked + .slider:before {
+      transform: translateX(58px);
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 32px;
+      width: 32px;
+      left: 5px;
+    }
+  }
+
+  &.switch--xs {
+    min-width: 80px;
+    height: 32px;
+    line-height: 32px;
+
+    input:checked + .slider:before {
+      transform: translateX(48px);
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 24px;
+      width: 24px;
+      left: 4px;
+    }
+  }
+
+  .label--unchecked,
+  .label--checked {
+    position: absolute;
+    cursor: pointer;
+    color: ${(props) => props.theme.colors.primaryText};
+    font-size: 14px;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  .label--checked {
+    left: 15px;
+    right: auto;
+  }
+
+  .label--unchecked {
+    right: 15px;
+    left: auto;
+  }
+
+  &.switch--checked {
+    transition: 0.4s all;
+
+    .label--checked {
+      visibility: visible;
+      opacity: 1;
+    }
+    
+    .label--unchecked {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+  
+  &.switch--unchecked {
+    transition: 0.4s all;
+
+    .label--unchecked {
+      visibility: visible;
+      opacity: 1;
+      z-index: 1;
+    }
+  
+    .label--checked {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+
+`;
+
+export default SwitchWrapper;

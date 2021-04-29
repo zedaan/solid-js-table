@@ -16,9 +16,17 @@ const RadioGroup: Component<any> = (props) => {
 
   createComputed(() => {
     setItems(props.children.map((item: any) => {
-      item.firstChild.tagName === 'INPUT'
-        ? item.firstChild.checked = item.firstChild.value === props.selected
-        : item.lastChild.checked = item.lastChild.value === props.selected;
+      if (item.firstChild.tagName === 'INPUT') {
+        item.firstChild.checked = item.firstChild.value === props.selected;
+        item.firstChild.value === props.selected
+          ? item.firstChild.classList.add('input--active')
+          : item.firstChild.classList.remove('input--active'); 
+      } else {
+        item.lastChild.checked = item.lastChild.value === props.selected;
+        item.lastChild.value === props.selected
+          ? item.lastChild.classList.add('input--active')
+          : item.lastChild.classList.remove('input--active');
+      }
       return item;
     }));
   })

@@ -1,13 +1,11 @@
 import { createSignal } from 'solid-js';
 import Radio, { RadioGroup } from '../../../components/Radio'
 
+
 const RenderInputFields = () => {
   const [selected, setSelected] = createSignal('1');
   return (
     <div>
-      <div className="item--radio">
-        <Radio label="Normal" />
-      </div>
       <div className="item--radio">
         <Radio label="Selected" checked />
       </div>
@@ -22,7 +20,7 @@ const RenderInputFields = () => {
           onChange={(value: any) => setSelected(value)}
         >
           <Radio label="Option one" value="1" />
-          <Radio label="Option two" value="2" />
+          <Radio label="Option one" value="2" />
           <Radio label="Option three" value="3" />
         </RadioGroup>
       </div>
@@ -36,7 +34,7 @@ const RenderInputFields = () => {
         >
           <Radio label="Option one" value="1" />
           <Radio label="Option two" value="2" />
-          <Radio label="Option three" value="3" />
+          <Radio label="Option three" value="3" disabled />
         </RadioGroup>
       </div>
     </div>

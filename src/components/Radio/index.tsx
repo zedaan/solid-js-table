@@ -5,18 +5,22 @@ import RadioWrapper from './styles';
 const Radio: Component<any> = (props) => {
   const { label, labelPosition = 'right', className, ...rest } = props;
   
-  const renderLabel = (
-    <label className={`label label--${labelPosition || 'left'}`} for={label}>{label}</label>
-  )
-
   return (
-    <RadioWrapper className={`radio ${className || ''} ${rest.disabled ? 'radio--disabled' : ''}`}>
+    <RadioWrapper
+      className={`radio ${className || ''} ${rest.disabled ? 'radio--disabled' : ''}`}
+    >
       <Show when={labelPosition !== 'right'}>
-        {renderLabel}
+        {props.label}
       </Show>
-      <input {...rest} type="radio" id={label} />
+      <input
+        {...rest}
+        type="radio"
+        id={label}
+        className={`${props.checked ? 'input--active' : ''}`}
+      />
+      <span className={`checkmark`}></span>
       <Show when={labelPosition === 'right'}>
-        {renderLabel}
+        {props.label}
       </Show>
     </RadioWrapper>
   )
