@@ -15,7 +15,7 @@ const Switch: Component<any> = (props) => {
   return (
     <Wrapper>
       <h5 style={{ color: '#fff'}}>Default</h5>
-      <SwitchDemo onChange={(e: any) => setActive(!isActive())} checked={isActive()} />
+      <SwitchDemo onChange={(e: any) => setActive(!isActive())} checked={!isActive()} />
       <div style={{ display: 'flex', "justify-content": 'space-between' }}>
         <div>
           <h5 style={{ color: '#fff', "margin-top": '40px' }}>Large</h5>
@@ -23,7 +23,7 @@ const Switch: Component<any> = (props) => {
         </div>
         <div>
           <h5 style={{ color: '#fff', "margin-top": '40px' }}>Medium</h5>
-          <SwitchDemo onChange={(e: any) => setActive(!isActive())} checked={isActive()} size="md"/>
+          <SwitchDemo onChange={(e: any) => setActive(!isActive())} checked={!isActive()} size="md"/>
         </div>
         <div>
           <h5 style={{ color: '#fff', "margin-top": '40px' }}>Small</h5>
@@ -31,14 +31,14 @@ const Switch: Component<any> = (props) => {
         </div>
         <div>
           <h5 style={{ color: '#fff', "margin-top": '40px' }}>Extra small</h5>
-          <SwitchDemo onChange={(e: any) => setActive(!isActive())} checked={isActive()} size="xs"/>
+          <SwitchDemo onChange={(e: any) => setActive(!isActive())} checked={!isActive()} size="xs"/>
         </div>
       </div>
       <h4 style={{ color: '#fff' }}>Switch with Labels</h4>
       <div style={{ display: 'flex', "justify-content": 'space-between'}}>
         <SwitchDemo
           onChange={(e: any) => setActive(!isActive())}
-          checked={isActive()}
+          checked={!isActive()}
           size="lg"
           checkedLabel="Yes"
           unCheckedLabel="No"
@@ -54,7 +54,7 @@ const Switch: Component<any> = (props) => {
           />
         <SwitchDemo
           onChange={(e: any) => setActive(!isActive())}
-          checked={isActive()}
+          checked={!isActive()}
           size="sm"
           checkedLabel="Yes"
           unCheckedLabel="No"
