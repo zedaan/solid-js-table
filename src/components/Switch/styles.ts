@@ -81,9 +81,9 @@ const SwitchWrapper: any = styled("label")`
     .slider:before {
       position: absolute;
       content: "";
-      height: 46px;
-      width: 46px;
-      left: 6px;
+      height: 42px;
+      width: 42px;
+      left: 8px;
     }
 
     .label--unchecked,
@@ -105,9 +105,9 @@ const SwitchWrapper: any = styled("label")`
     .slider:before {
       position: absolute;
       content: "";
-      height: 40px;
-      width: 40px;
-      left: 5px;
+      height: 38px;
+      width: 38px;
+      left: 6px;
     }
 
     .label--unchecked,
