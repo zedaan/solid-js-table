@@ -83,11 +83,16 @@ const RenderCheckboxes = () => {
         options={options().map((item: any) => ({ ...item, disabled: false }))}
         inline
       />
+      <h5>Checkbox without label</h5>
+      <Checkbox />
+      <Checkbox checked  />
+      <Checkbox disabled />
 
       <h5>Inline Checkbox without label</h5>
       <Checkbox inline />
       <Checkbox checked inline  />
       <Checkbox disabled inline />
+
     </Wrapper>
   )
 };
