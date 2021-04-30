@@ -75,8 +75,6 @@ const Switch: Component<any> = (props) => {
           onChange={(e: any) => setActive(!isActive())}
           checked={isActive()}
           size="sm"
-          checkedLabel="Yes"
-          unCheckedLabel="No"
           disabled
         />
       </div>

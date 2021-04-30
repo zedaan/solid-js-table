@@ -10,9 +10,10 @@ import RenderInputFields from './components/InputFields';
 import RadioInput from './components/RadioInput';
 import SwitchDemo from './components/SwitchDemo'
 import Wrapper from "./styles";
+import Checkbox from './components/Chekbox';
 
 const App: Component = () => {
-  const [isActive, setIsActive] = createSignal(4);
+  const [isActive, setIsActive] = createSignal(5);
   const buttons = ['Extra Large', 'Large', 'Medium', 'Small', 'Extra Small'];
 
   return (
@@ -82,6 +83,10 @@ const App: Component = () => {
           <Tab label="Switch">
             <h2 style={{ color: "#fff" }}>Switch Demo</h2>
             <SwitchDemo/>
+          </Tab>
+          <Tab label="Checkbox">
+            <h2 style={{ color: "#fff" }}>Checkbox Demo</h2>
+            <Checkbox />
           </Tab>
         </Tabs>
       </div>
