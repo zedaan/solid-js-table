@@ -1,6 +1,6 @@
-import { styled } from 'solid-styled-components';
+import { styled } from "solid-styled-components";
 
-const PlusIcon = styled('i')`
+const PlusIcon = styled("i")`
   position: relative;
   background-color: ${({ color }: any) => color};
   width: 10px;

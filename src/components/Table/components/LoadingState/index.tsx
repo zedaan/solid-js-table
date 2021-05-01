@@ -1,8 +1,8 @@
-import { Component, Show } from 'solid-js';
-import { styled } from 'solid-styled-components';
-import LoadingIcon from './LoadingIcon';
+import { Component, Show } from "solid-js";
+import { styled } from "solid-styled-components";
+import LoadingIcon from "./LoadingIcon";
 
-const Wrapper = styled('div')`
+const Wrapper = styled("div")`
   position: absolute;
   display: flex;
   height: 100%;
@@ -15,9 +15,9 @@ const Wrapper = styled('div')`
   align-items: center;
   z-index: 999;
   text-align: center;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   transition: 0.5s all;
-  
+
   .para {
     color: ${(props) => props.theme.colors.primaryText};
   }
@@ -30,7 +30,7 @@ const DefaultLoading = () => (
     </div>
     <p className="para">Loading data...</p>
   </div>
-)
+);
 
 const LoadingState: Component<any> = (props) => (
   <Wrapper>

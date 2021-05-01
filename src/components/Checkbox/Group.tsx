@@ -1,9 +1,9 @@
-import { Component, For } from 'solid-js';
-import Checkbox from '.';
+import { Component, For } from "solid-js";
+import Checkbox from ".";
 
 const Group: Component<any> = (props) => {
   return (
-    <div onChange={props.onChange} className={props.className || ''}>
+    <div onChange={props.onChange} className={props.className || ""}>
       <For each={props.options}>
         {(option: any) => (
           <Checkbox
@@ -16,7 +16,7 @@ const Group: Component<any> = (props) => {
         )}
       </For>
     </div>
-  )
-}
+  );
+};
 
 export default Group;

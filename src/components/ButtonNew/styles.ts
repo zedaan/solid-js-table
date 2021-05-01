@@ -1,11 +1,11 @@
-import { styled } from 'solid-styled-components';
+import { styled } from "solid-styled-components";
 
-const ButtonWrapper: any = styled('button')`
+const ButtonWrapper: any = styled("button")`
   display: flex;
   color: ${(props) => props.theme.colors.primaryText};
   background: #121111;
   cursor: pointer;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 600;
   align-items: center;
@@ -26,14 +26,14 @@ const ButtonWrapper: any = styled('button')`
 
   &:active,
   &:visited,
-  &:focus,  
+  &:focus,
   &:hover {
     outline: none;
   }
 
   &:hover {
-    background: #1C1B1B;
-    border-color: #1C1B1B;
+    background: #1c1b1b;
+    border-color: #1c1b1b;
   }
 
   &:active,
@@ -46,27 +46,27 @@ const ButtonWrapper: any = styled('button')`
     height: 56px;
     padding: 0 40px;
   }
-  
+
   &.btn--lg {
     font-size: 1em;
     height: 48px;
     padding: 0 32px;
   }
-  
+
   &.btn--md {
     font-size: 0.875em;
     font-weight: 500;
     height: 40px;
     padding: 0 24px;
   }
-  
+
   &.btn--sm {
     font-size: 0.75em;
     font-weight: normal;
     height: 36px;
     padding: 0 20px;
   }
-  
+
   &.btn--xs {
     font-size: 0.75em;
     font-weight: normal;
@@ -75,22 +75,22 @@ const ButtonWrapper: any = styled('button')`
   }
 
   &.btn--primary {
-    background-color: #0095F8;
-    border: 1px solid #0095F8;
+    background-color: #0095f8;
+    border: 1px solid #0095f8;
 
     &:hover {
-      background-color: #0089E4;
-      border: 1px solid #0089E4;
+      background-color: #0089e4;
+      border: 1px solid #0089e4;
     }
   }
 
   &.btn--danger {
-    background-color: #FF464F;
-    border-color: #FF464F;
+    background-color: #ff464f;
+    border-color: #ff464f;
 
     &:hover {
-      background-color: #FF323C;
-      border-color: #FF323C;
+      background-color: #ff323c;
+      border-color: #ff323c;
     }
   }
 
@@ -100,38 +100,38 @@ const ButtonWrapper: any = styled('button')`
 
     &:hover {
       background-color: transparent;
-      border-color:  #635D5D;
+      border-color: #635d5d;
     }
   }
 
   &.btn--ghost-primary {
-    color: #0095F8;
+    color: #0095f8;
     background-color: transparent;
-    border-color: #0095F8;
-    
+    border-color: #0095f8;
+
     &:hover {
-      color: #0089E4;
+      color: #0089e4;
       background-color: transparent;
-      border-color:  #0089E4;
+      border-color: #0089e4;
     }
   }
-  
+
   &.btn--ghost-danger {
-    color: #FF464F;
+    color: #ff464f;
     background-color: transparent;
-    border-color: #FF464F;
-    
+    border-color: #ff464f;
+
     &:hover {
-      color: #FF323C;
+      color: #ff323c;
       background-color: transparent;
-      border-color:  #FF323C;
+      border-color: #ff323c;
     }
   }
-  
+
   &.btn--disabled {
     color: rgba(243, 243, 243, 0.32);
     background-color: rgba(18, 17, 17, 0.32);
-    border-color: rgba(18, 17, 17, 0.0);
+    border-color: rgba(18, 17, 17, 0);
     cursor: not-allowed;
 
     &:active,
@@ -169,6 +169,5 @@ const ButtonWrapper: any = styled('button')`
     }
   }
 `;
-
 
 export default ButtonWrapper;

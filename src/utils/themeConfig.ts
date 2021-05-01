@@ -7,6 +7,7 @@ export const themes = {
       inActive: '#717070',
       grey: '#2F2B2B',
       active: '#6DD26C',
+      danger: '#ff464f',
     }
   },
   light: {
@@ -17,6 +18,7 @@ export const themes = {
       inActive: '#717070',
       grey: '#2F2B2B',
       active: '#6DD26C',
+      danger: '#ff464f',
     }
   }
 }

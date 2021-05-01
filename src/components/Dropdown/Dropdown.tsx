@@ -1,45 +1,45 @@
-import { Component, createSignal, onMount, Show } from 'solid-js';
-import { Portal } from 'solid-js/web';
-import Wrapper, { DropdownMenu } from './styles';
+import { Component, createSignal, onMount, Show } from "solid-js";
+import { Portal } from "solid-js/web";
+import Wrapper, { DropdownMenu } from "./styles";
 
 interface IDropdownProps {
   label?: string;
   renderButton?: any;
   children?: any;
-  position?: 'left' | 'right';
+  position?: "left" | "right";
 }
 
 const Dropdown: Component<IDropdownProps> = (props) => {
   let dropdownRef: any;
   let dropdownMenuRef: any;
   const [isVisible, setVisible] = createSignal(false),
-
-  toggleButton = (e: any, value: any) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setVisible(value);
-  };
+    toggleButton = (e: any, value: any) => {
+      e.preventDefault();
+      e.stopPropagation();
+      setVisible(value);
+    };
 
   const closeOnOutsideClick = (e: any) => {
-    if(isVisible()) {
+    if (isVisible()) {
       setVisible(false);
     }
-    if(!e.target.matches('.dropdown--btn *')){
+    if (!e.target.matches(".dropdown--btn *")) {
       setVisible(false);
     }
-  }
+  };
 
   onMount(() => {
-    document.addEventListener('click', closeOnOutsideClick, true);
+    document.addEventListener("click", closeOnOutsideClick, true);
     () => {
-      document.removeEventListener('click', closeOnOutsideClick, true);
-    }
-  })
+      document.removeEventListener("click", closeOnOutsideClick, true);
+    };
+  });
 
   return (
     <Wrapper className="dropdown">
       <div
-        className="dropdown--btn" ref={dropdownRef}
+        className="dropdown--btn"
+        ref={dropdownRef}
         onClick={(e) => toggleButton(e, !isVisible())}
       >
         {props?.renderButton?.(isVisible()) || props.label}
@@ -55,6 +55,6 @@ const Dropdown: Component<IDropdownProps> = (props) => {
       </Show>
     </Wrapper>
   );
-}
+};
 
 export default Dropdown;

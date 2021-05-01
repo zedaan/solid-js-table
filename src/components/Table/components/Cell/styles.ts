@@ -1,6 +1,6 @@
-import { styled } from 'solid-styled-components';
+import { styled } from "solid-styled-components";
 
-const Td = styled('td')`
+const Td = styled("td")`
   &.fixed__cell {
     position: sticky;
     background: ${({ theme }) => theme.colors.primary};
@@ -12,21 +12,20 @@ const Td = styled('td')`
       top: 0;
       bottom: -1px;
       width: 30px;
-      transition: box-shadow .3s;
+      transition: box-shadow 0.3s;
       pointer-events: none;
     }
-    
-    
+
     &.cell--left {
       left: 0;
-      
+
       &:before {
         transform: translateX(100%);
         box-shadow: inset 10px 0 8px -8px rgb(0 0 0 / 15%);
         right: 0;
       }
     }
-    
+
     &.cell--right {
       right: 0;
 
@@ -37,7 +36,7 @@ const Td = styled('td')`
       }
     }
 
-    @media(max-width: 768px) {
+    @media (max-width: 768px) {
       position: relative;
 
       &:before,

@@ -1,6 +1,12 @@
-import { Component, Suspense, Switch, Match, For, createComputed, createMemo } from "solid-js";
-import { parseTabList } from './helper';
-import { TabPane, TabContent } from './styles';
+import {
+  Component,
+  Suspense,
+  Switch,
+  Match,
+  For,
+} from "solid-js";
+import { parseTabList } from "./helper";
+import { TabPane, TabContent } from "./styles";
 
 interface IProps {
   activeTab: any;
@@ -15,7 +21,10 @@ const Tabs: Component<IProps> = (props) => {
       <TabPane>
         <For each={tabs}>
           {(item: any, index: any) => (
-            <li classList={{ selected: props.activeTab() === index() }} onClick={() => props.onChange(index())}>
+            <li
+              classList={{ selected: props.activeTab() === index() }}
+              onClick={() => props.onChange(index())}
+            >
               {item.label}
             </li>
           )}
@@ -36,6 +45,6 @@ const Tabs: Component<IProps> = (props) => {
       </TabContent>
     </>
   );
-}
+};
 
 export default Tabs;

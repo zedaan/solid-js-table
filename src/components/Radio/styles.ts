@@ -1,6 +1,6 @@
-import { styled } from 'solid-styled-components';
+import { styled } from "solid-styled-components";
 
-const RadioWrapper = styled('label')`
+const RadioWrapper = styled("label")`
   &.radio {
     position: relative;
     display: block;
@@ -14,24 +14,24 @@ const RadioWrapper = styled('label')`
 
     input {
       position: absolute;
-      opacity:0;
+      opacity: 0;
       cursor: pointer;
     }
 
     .checkmark {
       position: absolute;
-      top:0;
-      left:0;
+      top: 0;
+      left: 0;
       bottom: 0;
       margin: auto;
-      height:14px;
-      width:14px;
+      height: 14px;
+      width: 14px;
       background-color: ${(props) => props.theme.colors.primary};
       border: 3px solid ${(props) => props.theme.colors.primary};
       box-shadow: 0 0 0px 1px ${(props) => props.theme.colors.inActive};
       border-radius: 50%;
     }
-  
+
     &:hover {
       color: ${(props) => props.theme.colors.primaryText};
 
@@ -41,7 +41,7 @@ const RadioWrapper = styled('label')`
     }
     &:hover .input--active ~ .checkmark,
     .input--active ~ .checkmark {
-      background-color: #0095F8;
+      background-color: #0095f8;
       border: 3px solid ${(props) => props.theme.colors.primary};
       box-shadow: 0 0 0px 1px ${(props) => props.theme.colors.primaryText};
     }
@@ -58,7 +58,7 @@ const RadioWrapper = styled('label')`
       opacity: 0.5;
       color: ${(props) => props.theme.colors.inActive};
     }
-    
+
     &:hover {
       input ~ .checkmark {
         box-shadow: 0 0 0px 1px ${(props) => props.theme.colors.inActive};

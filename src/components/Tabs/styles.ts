@@ -1,10 +1,10 @@
-import { styled } from 'solid-styled-components';
+import { styled } from "solid-styled-components";
 
-export const TabPane = styled('ul')`
+export const TabPane = styled("ul")`
   display: flex;
   width: 100%;
   list-style-type: none;
-  border-bottom: 1px solid #2F2B2B;
+  border-bottom: 1px solid #2f2b2b;
   padding: 0;
   margin: 0;
 
@@ -20,10 +20,10 @@ export const TabPane = styled('ul')`
     padding: 16px 5px;
     padding-left: 0;
     transition: 0.3s all;
-    
+
     &:before {
       position: absolute;
-      content: '';
+      content: "";
       height: 2px;
       width: 100%;
       bottom: -4px;
@@ -33,11 +33,11 @@ export const TabPane = styled('ul')`
     &:hover {
       color: ${({ theme }) => theme?.colors?.primaryText};
     }
-    
+
     &.selected {
       color: ${({ theme }) => theme?.colors?.primaryText};
       transition: 0.3s ease-in;
-      
+
       &:before {
         bottom: -1px;
         background-color: ${({ theme }) => theme?.colors?.primaryText};
@@ -46,6 +46,4 @@ export const TabPane = styled('ul')`
   }
 `;
 
-export const TabContent = styled('div')`
-  
-`;
+export const TabContent = styled("div")``;

@@ -1,5 +1,5 @@
-import { Component, createComputed, onMount, Show } from 'solid-js';
-import Td from './styles';
+import { Component, createComputed, onMount, Show } from "solid-js";
+import Td from "./styles";
 
 interface ICellProps {
   column: any;
@@ -12,9 +12,7 @@ const Cell: Component<ICellProps> = (props: any) => {
   return (
     <Td
       className={
-        props?.column?.fixed
-          ? `fixed__cell cell--${props.column.fixed}`
-          : ''
+        props?.column?.fixed ? `fixed__cell cell--${props.column.fixed}` : ""
       }
     >
       <Show
@@ -27,7 +25,7 @@ const Cell: Component<ICellProps> = (props: any) => {
         />
       </Show>
     </Td>
-  )
+  );
 };
 
 export default Cell;

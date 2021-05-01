@@ -5,7 +5,7 @@ const InputWrapper: any = styled("div")<any>`
     position: relative;
     height: 40px;
     line-height: 40px;
-    
+
     input {
       display: flex;
       color: ${(props) => props.theme.colors.primaryText};
@@ -18,10 +18,10 @@ const InputWrapper: any = styled("div")<any>`
       outline: none;
       align-items: center;
       padding: 0px 20px;
-      padding-left: ${({ iconLeft }) => iconLeft ? '45px' : 'auto'};
-      padding-right: ${({ iconRight }) => iconRight ? '45px' : 'auto'};
+      padding-left: ${({ iconLeft }) => (iconLeft ? "45px" : "auto")};
+      padding-right: ${({ iconRight }) => (iconRight ? "45px" : "auto")};
     }
-  
+
     &.input--lg {
       &,
       input[type="text"] {
@@ -30,7 +30,7 @@ const InputWrapper: any = styled("div")<any>`
         font-size: 1em;
       }
     }
-    
+
     &.input--md {
       &,
       input[type="text"] {
@@ -39,7 +39,7 @@ const InputWrapper: any = styled("div")<any>`
         font-size: 1em;
       }
     }
-    
+
     &.input--sm {
       &,
       input[type="text"] {
@@ -48,7 +48,7 @@ const InputWrapper: any = styled("div")<any>`
         font-size: 0.9375em;
       }
     }
-    
+
     &.input--xs {
       &,
       input[type="text"] {
@@ -58,7 +58,7 @@ const InputWrapper: any = styled("div")<any>`
         border-radius: 0.5em;
       }
     }
-  
+
     .icon {
       position: absolute;
       top: 0;
@@ -66,11 +66,11 @@ const InputWrapper: any = styled("div")<any>`
       height: 2px;
       margin: auto;
       color: #fff;
-  
+
       &.icon--left {
         left: 20px;
       }
-  
+
       &.icon--right {
         right: 20px;
       }

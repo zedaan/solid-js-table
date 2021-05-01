@@ -11,9 +11,10 @@ import RadioInput from './components/RadioInput';
 import SwitchDemo from './components/SwitchDemo'
 import Wrapper from "./styles";
 import Checkbox from './components/Chekbox';
+import Upload from './components/Upload';
 
 const App: Component = () => {
-  const [isActive, setIsActive] = createSignal(5);
+  const [isActive, setIsActive] = createSignal(6);
   const buttons = ['Extra Large', 'Large', 'Medium', 'Small', 'Extra Small'];
 
   return (
@@ -87,6 +88,10 @@ const App: Component = () => {
           <Tab label="Checkbox">
             <h2 style={{ color: "#fff" }}>Checkbox Demo</h2>
             <Checkbox />
+          </Tab>
+          <Tab label="Upload">
+            <h2 style={{ color: "#fff" }}>Upload Demo</h2>
+            <Upload />
           </Tab>
         </Tabs>
       </div>

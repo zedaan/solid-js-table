@@ -1,12 +1,12 @@
-import { styled } from 'solid-styled-components';
+import { styled } from "solid-styled-components";
 
-export default styled('i')`
+export default styled("i")`
   display: inline-block;
   width: 20px;
   height: 20px;
   margin: auto;
   padding: 25px 0;
-  
+
   &:after {
     content: " ";
     display: block;

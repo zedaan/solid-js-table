@@ -13,7 +13,7 @@ const SwitchWrapper: any = styled("label")`
     width: 0;
     height: 0;
   }
-  
+
   .slider {
     position: absolute;
     cursor: pointer;
@@ -22,9 +22,9 @@ const SwitchWrapper: any = styled("label")`
     bottom: 0;
     right: 0;
     background-color: ${(props) => props.theme.colors.inActive};
-    transition: .4s;
+    transition: 0.4s;
   }
-  
+
   .slider:before {
     position: absolute;
     content: "";
@@ -35,21 +35,21 @@ const SwitchWrapper: any = styled("label")`
     top: 0;
     margin: auto;
     background-color: white;
-    transition: .4s;
+    transition: 0.4s;
   }
-  
+
   input:checked + .slider {
     background-color: #2196f3;
   }
-  
+
   input:focus + .slider {
     box-shadow: 0 0 0 2px rgb(24 144 255 / 20%);
   }
-  
+
   input:checked + .slider:before {
     transform: translateX(35px);
   }
-  
+
   .slider.round {
     border-radius: 34px;
   }
@@ -170,13 +170,13 @@ const SwitchWrapper: any = styled("label")`
       visibility: visible;
       opacity: 1;
     }
-    
+
     .label--unchecked {
       visibility: hidden;
       opacity: 0;
     }
   }
-  
+
   &.switch--unchecked {
     transition: 0.4s all;
 
@@ -185,7 +185,7 @@ const SwitchWrapper: any = styled("label")`
       opacity: 1;
       z-index: 1;
     }
-  
+
     .label--checked {
       visibility: hidden;
       opacity: 0;
@@ -197,7 +197,6 @@ const SwitchWrapper: any = styled("label")`
     cursor: not-allowed;
     opacity: 0.4;
   }
-
 `;
 
 export default SwitchWrapper;

@@ -1,6 +1,6 @@
 export enum ISortDirection {
-  'asc',
-  'desc',
+  "asc",
+  "desc",
 }
 
 export interface IPagination {

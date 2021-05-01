@@ -1,6 +1,6 @@
-import { Component, Show } from 'solid-js';
-import { renderHeaderIcon } from '../sortHeaderIcon';
-import Th from './styles';
+import { Component, Show } from "solid-js";
+import { renderHeaderIcon } from "../sortHeaderIcon";
+import Th from "./styles";
 
 interface IHeaderCellProps {
   column: any;
@@ -15,10 +15,12 @@ interface IHeaderCellProps {
 const HeaderCell: Component<IHeaderCellProps> = (props: any) => (
   <Th
     colSpan={props.column.colSpan}
-    className={`${props?.column?.fixed ? `fixed__header header--${props.column.fixed}` : ''}`}
+    className={`${
+      props?.column?.fixed ? `fixed__header header--${props.column.fixed}` : ""
+    }`}
   >
     <div
-      className={`${props.column.sort ? 'th__sorter' : ''}`}
+      className={`${props.column.sort ? "th__sorter" : ""}`}
       onClick={props?.onClick ?? null}
     >
       <Show when={props.column.render} fallback={props.column.header}>

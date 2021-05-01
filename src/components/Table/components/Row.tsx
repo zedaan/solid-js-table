@@ -1,5 +1,5 @@
-import { Component, For } from 'solid-js';
-import Cell from './Cell';
+import { Component, For } from "solid-js";
+import Cell from "./Cell";
 
 interface IRowProps {
   headers: any[];
@@ -9,7 +9,7 @@ interface IRowProps {
 }
 
 const Row: Component<IRowProps> = (props: any) => (
-  <tr className={props.isSelected ? 'active' : ''}>
+  <tr className={props.isSelected ? "active" : ""}>
     <For each={props.headers}>
       {(column) => (
         <Cell

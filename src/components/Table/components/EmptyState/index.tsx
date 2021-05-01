@@ -1,10 +1,10 @@
-import { Component } from 'solid-js';
-import { styled } from 'solid-styled-components';
+import { Component } from "solid-js";
+import { styled } from "solid-styled-components";
 
-const Wrapper: any = styled('tr')`
+const Wrapper: any = styled("tr")`
   cursor: default !important;
   background-color: transparent !important;
-  
+
   td {
     font-size: 14px;
     color: ${(props) => props.theme.colors.inActive} !important;
@@ -18,7 +18,7 @@ const Wrapper: any = styled('tr')`
     box-sizing: border-box;
     position: relative;
     display: block;
-    transform: scale(var(--ggs,1));
+    transform: scale(var(--ggs, 1));
     width: 30px;
     height: 30px;
     border: 2px solid;
@@ -29,29 +29,28 @@ const Wrapper: any = styled('tr')`
   }
   .icon-inbox::after,
   .icon-inbox::before {
-      content: "";
-      display: block;
-      box-sizing: border-box;
-      position: absolute;
-      background: currentColor;
-      height: 9px;
-      width: 9px;
-      border-radius: 2px;
-      bottom: -2px;
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    background: currentColor;
+    height: 9px;
+    width: 9px;
+    border-radius: 2px;
+    bottom: -2px;
   }
   .icon-inbox::before {
-      left: -2px;
+    left: -2px;
   }
   .icon-inbox::after {
-      right: -2px;
+    right: -2px;
   }
-  
 `;
 
 const EmptyState = (props: any) => (
   <Wrapper>
     <td colSpan={props?.colSpan}>
-      <div >
+      <div>
         <i className="icon-inbox" />
         {props.children}
       </div>
