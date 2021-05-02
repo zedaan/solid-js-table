@@ -10,7 +10,7 @@ const Wrapper = styled('div')`
 
 const UploadDemo = () => {
   const [fileList, setFileList] = createSignal<any>([{
-    url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+    url: 'https://cf.bstatic.com/images/hotel/max1024x768/228/228984065.jpg',
   }]),
   [imgSrc, setImgSrc] = createSignal(null),
   onChange = (e: any) => {
