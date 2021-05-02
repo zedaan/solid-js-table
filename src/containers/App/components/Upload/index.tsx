@@ -39,7 +39,7 @@ const UploadDemo = () => {
         Click to upload file
       </Upload>
 
-      <hr style={{ "margin-top": '40px'}}/>
+      <hr style={{ "margin-top": '40px', "border": '1px solid #2F2B2B' }}/>
       <h5>Avatar</h5>
       <Upload
         listType="card"
