@@ -39,7 +39,7 @@ const UploadDemo = () => {
         Click to upload file
       </Upload>
 
-      <hr />
+      <hr style={{ "margin-top": '40px'}}/>
       <h5>Avatar</h5>
       <Upload
         listType="card"
@@ -59,6 +59,13 @@ const UploadDemo = () => {
         onDelete={onDelete}
       >
         {fileList().length < 5 ? 'Upload' : null}
+      </Upload>
+
+      <h5>Draggable</h5>
+      <Upload
+        draggable
+      >
+        Click or Drag and drop file here
       </Upload>
     </Wrapper>
   )

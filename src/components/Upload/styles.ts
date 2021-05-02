@@ -138,6 +138,25 @@ const UploadWrapper = styled('div')`
     z-index: 9;
     cursor: pointer;
   }
+
+  .upload--draggable {
+    display: flex;
+    height: 120px;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.2);
+
+    input {
+      width: 100%;
+      height: 100%;
+    }
+
+    &.active,
+    &:hover {
+      border: 1px dashed ${(props) => props.theme.colors.primaryText};
+    }
+  }
 `;
 
 export default UploadWrapper;
