@@ -24,7 +24,8 @@ const UploadWrapper = styled('div')`
 
   .file--list {
     display: flex;
-    padding: 10px 0;
+    padding: 10px;
+    margin: 5px 0;
 
     .file--info {
       color: ${(props) => props.theme.colors.inActive};
@@ -46,6 +47,14 @@ const UploadWrapper = styled('div')`
       color: ${(props) => props.theme.colors.danger};
       margin-left: 15px;
       cursor: pointer;
+      display: none;
+    }
+    
+    &:hover {
+      background-color: ${(props) => props.theme.colors.grey};
+      .delete--btn {
+        display: block;
+      }
     }
   }
 
