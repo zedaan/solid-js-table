@@ -35,4 +35,10 @@ body {
   stroke: steelblue;
   cursor: pointer;
 }
+
+.btn--wrap {
+  > button {
+    margin-right: 10px;
+  }
+}
 `;

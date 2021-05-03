@@ -1,7 +1,7 @@
-import { createComputed, createMemo, createSignal } from "solid-js";
+import { createMemo, createSignal } from "solid-js";
 import Table from "./Table";
 import Dropdown, { DropdownMenu } from "../Dropdown";
-import Button from "../Button";
+import Button from "../ButtonNew";
 
 const App: any = () => {
   const generateData = () => {
@@ -101,7 +101,7 @@ const App: any = () => {
 
   return (
     <div>
-      <div style={{ margin: "20px" }}>
+      <div style={{ margin: "20px", "margin-left": 0 }} className="btn--wrap">
         <Button onClick={() => setLoading(!loading())}>Toggle Loading</Button>
         <Button onClick={() => setFixedheaders(!fixedHeaders())}>
           Toggle Fixed Headers

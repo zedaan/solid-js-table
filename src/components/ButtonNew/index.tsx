@@ -36,6 +36,8 @@ const Button: Component<IButtonProps> = (props) => {
     ...rest
   } = props;
 
+  let ref: any;
+
   const renderLeftIcon = () => (
     <Show when={iconBefore}>
       <span className="icon icon--left">{iconBefore}</span>
@@ -59,25 +61,28 @@ const Button: Component<IButtonProps> = (props) => {
 
   return (
     <ButtonWrapper
+      ref={ref}
       className={`btn--${variant || "default"} ${className || ""} btn--${
         size || "sm"
       } ${loading ? "btn--loading" : ""} ${block ? "btn--block" : ""}`}
       {...rest}
       disabled={variant === "disabled"}
       onClick={(e: any) => {
-        e.target.classList.add("active");
+        e.stopPropagation();
+        ref.classList.add("active");
         setTimeout(() => {
-          console.log({ e: e.target });
-          e.target.classList.remove("active");
+          ref.classList.remove("active");
         }, 150);
         onClick && onClick(e);
       }}
     >
-      <Show when={!loading} fallback={renderLoading()}>
-        {renderLeftIcon()}
-        {props.children}
-        {renderRightICon()}
-      </Show>
+      <span className="btn--inner bg-white">
+        <Show when={!loading} fallback={renderLoading()}>
+          {renderLeftIcon()}
+          {props.children}
+          {renderRightICon()}
+        </Show>
+      </span>
     </ButtonWrapper>
   );
 };

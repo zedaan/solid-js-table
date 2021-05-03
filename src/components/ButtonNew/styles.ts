@@ -1,7 +1,6 @@
 import { styled } from "solid-styled-components";
 
 const ButtonWrapper: any = styled("button")`
-  display: flex;
   color: ${(props) => props.theme.colors.primaryText};
   background: #121111;
   cursor: pointer;
@@ -15,6 +14,10 @@ const ButtonWrapper: any = styled("button")`
   transform: scale(1);
   -webkit-font-smoothing: subpixel-antialiased;
   transition: 0.15s ease-in;
+
+  .btn--inner {
+    display: flex;
+  }
 
   .icon--left {
     margin-right: 11px;

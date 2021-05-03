@@ -12,9 +12,10 @@ import SwitchDemo from './components/SwitchDemo'
 import Wrapper from "./styles";
 import Checkbox from './components/Chekbox';
 import Upload from './components/Upload';
+import Grid from './components/Grid';
 
 const App: Component = () => {
-  const [isActive, setIsActive] = createSignal(6);
+  const [isActive, setIsActive] = createSignal(7);
   const buttons = ['Extra Large', 'Large', 'Medium', 'Small', 'Extra Small'];
 
   return (
@@ -23,7 +24,7 @@ const App: Component = () => {
         <Tabs activeTab={isActive} onChange={setIsActive}>
           <Tab label="Buttons">
             <Scrollbar style={{ 'max-height': `${window.innerHeight - 150}px` }}>
-              <h2 className="heading">Buttons Demo</h2>
+              <h5 style={{ color: '#fff' }}>Buttons Demo</h5>
               <hr />
               <div className="btn-group">
                 <For each={buttons}>
@@ -92,6 +93,10 @@ const App: Component = () => {
           <Tab label="Upload">
             <h2 style={{ color: "#fff" }}>Upload Demo</h2>
             <Upload />
+          </Tab>
+          <Tab label="Grid">
+            <h2 style={{ color: "#fff" }} className="pt-7">Grid Demo</h2>
+            <Grid />
           </Tab>
         </Tabs>
       </div>
