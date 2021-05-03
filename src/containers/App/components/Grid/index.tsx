@@ -7,6 +7,7 @@ const Div = styled("div")`
   margin: 8px;
   padding: 15px;
   color: ${(props) => props.theme.colors.primaryText};
+  padding: 20px 40px;
 `;
 
 const Wrapper = styled("div")`
@@ -14,6 +15,11 @@ const Wrapper = styled("div")`
     color: #fff;
     margin-top: 20px;
     margin-bottom: 10px;
+  }
+
+  .flex {
+    background-color: #12111159;
+    border-radius: 5px;
   }
 `;
 
