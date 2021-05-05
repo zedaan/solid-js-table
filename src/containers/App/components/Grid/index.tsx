@@ -39,7 +39,7 @@ const Grid: any = () => {
         </Column>
       </Row>
       <h5 style={{ color: "#fff" }}>Row Reversed</h5>
-      <Row>
+      <Row className="flex-row-reverse">
         <Column>
           <Div>Column 1</Div>
         </Column>
@@ -52,21 +52,21 @@ const Grid: any = () => {
       </Row>
       <h5 style={{ color: "#fff" }}>Row fit content</h5>
       <Row>
-        <Column size={1}>
+        <Column className="flex-1">
           <Div>Column 1</Div>
         </Column>
-        <Column size={1}>
+        <Column className="flex-1">
           <Div>Column 2</Div>
         </Column>
-        <Column size={1}>
+        <Column className="flex-1">
           <Div>Column 3</Div>
         </Column>
-        <Column size={1}>
+        <Column className="flex-1">
           <Div>Column 4</Div>
         </Column>
       </Row>
       <h5 style={{ color: "#fff" }}>Row Center</h5>
-      <Row align="center">
+      <Row className="justify-center">
         <Column>
           <Div>Column 1</Div>
         </Column>
@@ -82,7 +82,7 @@ const Grid: any = () => {
       </Row>
 
       <h5 style={{ color: "#fff" }}>Row right aligned</h5>
-      <Row align="end">
+      <Row className="justify-end">
         <Column>
           <Div>Column 1</Div>
         </Column>
@@ -98,7 +98,7 @@ const Grid: any = () => {
       </Row>
 
       <h5 style={{ color: "#fff" }}>Row Space between</h5>
-      <Row align="between">
+      <Row className="justify-between">
         <Column>
           <Div>Column 1</Div>
         </Column>
@@ -114,7 +114,7 @@ const Grid: any = () => {
       </Row>
 
       <h5 style={{ color: "#fff" }}>Column</h5>
-      <Row direction="col">
+      <Row className="flex-col">
         <Column>
           <Div>Column 1</Div>
         </Column>
@@ -130,7 +130,7 @@ const Grid: any = () => {
       </Row>
 
       <h5 style={{ color: "#fff" }}>Column Reversed</h5>
-      <Row direction="col-reverse">
+      <Row className="flex-col-reverse">
         <Column>
           <Div>Column 1</Div>
         </Column>

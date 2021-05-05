@@ -17,7 +17,6 @@ const RenderInputFields = () => {
       <div>
         <Input placeholder="Input extra small" size='xs' />
       </div>
-
       <h3 style={{ color: '#fff'}}>Input with Label</h3>
       <div>
         <Input placeholder="Name" size='lg' label="Name" />
